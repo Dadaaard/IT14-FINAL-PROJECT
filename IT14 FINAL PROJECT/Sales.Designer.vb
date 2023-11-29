@@ -43,6 +43,9 @@ Partial Class Sales
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblMonthlySales = New System.Windows.Forms.Label()
+        Me.lblWeeklySales = New System.Windows.Forms.Label()
+        Me.lblAnnuallySales = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvSales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -133,6 +136,8 @@ Partial Class Sales
         '
         'dgvSales
         '
+        Me.dgvSales.AllowUserToResizeColumns = False
+        Me.dgvSales.AllowUserToResizeRows = False
         Me.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSales.Location = New System.Drawing.Point(48, 310)
         Me.dgvSales.Name = "dgvSales"
@@ -174,6 +179,7 @@ Partial Class Sales
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.MintCream
+        Me.Panel5.Controls.Add(Me.lblAnnuallySales)
         Me.Panel5.Controls.Add(Me.Panel8)
         Me.Panel5.Location = New System.Drawing.Point(1342, 616)
         Me.Panel5.Name = "Panel5"
@@ -201,6 +207,7 @@ Partial Class Sales
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.MintCream
+        Me.Panel4.Controls.Add(Me.lblMonthlySales)
         Me.Panel4.Controls.Add(Me.Panel7)
         Me.Panel4.Location = New System.Drawing.Point(1517, 321)
         Me.Panel4.Name = "Panel4"
@@ -228,6 +235,7 @@ Partial Class Sales
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.MintCream
+        Me.Panel3.Controls.Add(Me.lblWeeklySales)
         Me.Panel3.Controls.Add(Me.Panel6)
         Me.Panel3.Location = New System.Drawing.Point(1175, 321)
         Me.Panel3.Name = "Panel3"
@@ -252,6 +260,36 @@ Partial Class Sales
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Weekly"
         '
+        'lblMonthlySales
+        '
+        Me.lblMonthlySales.AutoSize = True
+        Me.lblMonthlySales.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMonthlySales.Location = New System.Drawing.Point(58, 119)
+        Me.lblMonthlySales.Name = "lblMonthlySales"
+        Me.lblMonthlySales.Size = New System.Drawing.Size(101, 32)
+        Me.lblMonthlySales.TabIndex = 22
+        Me.lblMonthlySales.Text = "Label6"
+        '
+        'lblWeeklySales
+        '
+        Me.lblWeeklySales.AutoSize = True
+        Me.lblWeeklySales.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWeeklySales.Location = New System.Drawing.Point(56, 119)
+        Me.lblWeeklySales.Name = "lblWeeklySales"
+        Me.lblWeeklySales.Size = New System.Drawing.Size(101, 32)
+        Me.lblWeeklySales.TabIndex = 23
+        Me.lblWeeklySales.Text = "Label6"
+        '
+        'lblAnnuallySales
+        '
+        Me.lblAnnuallySales.AutoSize = True
+        Me.lblAnnuallySales.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAnnuallySales.Location = New System.Drawing.Point(58, 137)
+        Me.lblAnnuallySales.Name = "lblAnnuallySales"
+        Me.lblAnnuallySales.Size = New System.Drawing.Size(101, 32)
+        Me.lblAnnuallySales.TabIndex = 23
+        Me.lblAnnuallySales.Text = "Label6"
+        '
         'Sales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -272,12 +310,15 @@ Partial Class Sales
         Me.Panel1.ResumeLayout(False)
         CType(Me.dgvSales, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
         Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         Me.ResumeLayout(False)
@@ -305,4 +346,7 @@ Partial Class Sales
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Label3 As Label
+    Friend WithEvents lblMonthlySales As Label
+    Friend WithEvents lblWeeklySales As Label
+    Friend WithEvents lblAnnuallySales As Label
 End Class

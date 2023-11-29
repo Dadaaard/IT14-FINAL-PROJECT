@@ -11,8 +11,6 @@ Module StocksModule
 
     Public DBConnectionString As String = "Data Source=C:\Users\User\Dropbox\PC\Desktop\DigimarkDB.db"
 
-
-
     'Add
 
     Public Sub Add_Stocks(ByVal itemname As String, ByVal quantity As Integer, ByVal datepurchased As String, ByVal price As Integer)
@@ -130,11 +128,6 @@ Module StocksModule
             End Using
         End Using
     End Sub
-
-
-
-
-
 
     'DELETE
 

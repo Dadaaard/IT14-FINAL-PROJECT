@@ -13,6 +13,9 @@
 
     Private Sub Sales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadSales()
+        Load_MonthlySales()
+        Load_WeeklySales()
+        Load_AnnuallySales()
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click

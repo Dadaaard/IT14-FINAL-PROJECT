@@ -24,6 +24,7 @@ Partial Class Dashboard
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -47,10 +48,9 @@ Partial Class Dashboard
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.lblWeekly = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.lblCompletedOrders = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel10.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -73,6 +73,14 @@ Partial Class Dashboard
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(1920, 207)
         Me.Panel10.TabIndex = 8
+        '
+        'Panel11
+        '
+        Me.Panel11.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Panel11.Location = New System.Drawing.Point(600, 105)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(2, 86)
+        Me.Panel11.TabIndex = 11
         '
         'Button4
         '
@@ -230,11 +238,11 @@ Partial Class Dashboard
         '
         Me.lblAnnually.AutoSize = True
         Me.lblAnnually.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAnnually.Location = New System.Drawing.Point(121, 68)
+        Me.lblAnnually.Location = New System.Drawing.Point(110, 69)
         Me.lblAnnually.Name = "lblAnnually"
-        Me.lblAnnually.Size = New System.Drawing.Size(157, 25)
+        Me.lblAnnually.Size = New System.Drawing.Size(133, 25)
         Me.lblAnnually.TabIndex = 18
-        Me.lblAnnually.Text = "Overall Income"
+        Me.lblAnnually.Text = "Year Income"
         '
         'Label4
         '
@@ -260,7 +268,7 @@ Partial Class Dashboard
         '
         Me.lblMonthly.AutoSize = True
         Me.lblMonthly.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMonthly.Location = New System.Drawing.Point(120, 69)
+        Me.lblMonthly.Location = New System.Drawing.Point(110, 64)
         Me.lblMonthly.Name = "lblMonthly"
         Me.lblMonthly.Size = New System.Drawing.Size(158, 25)
         Me.lblMonthly.TabIndex = 17
@@ -290,7 +298,7 @@ Partial Class Dashboard
         '
         Me.lblWeekly.AutoSize = True
         Me.lblWeekly.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWeekly.Location = New System.Drawing.Point(124, 75)
+        Me.lblWeekly.Location = New System.Drawing.Point(110, 57)
         Me.lblWeekly.Name = "lblWeekly"
         Me.lblWeekly.Size = New System.Drawing.Size(154, 25)
         Me.lblWeekly.TabIndex = 16
@@ -306,14 +314,6 @@ Partial Class Dashboard
         Me.Label6.TabIndex = 2
         Me.Label6.Text = "Weekly"
         '
-        'Panel11
-        '
-        Me.Panel11.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel11.Location = New System.Drawing.Point(600, 105)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(2, 86)
-        Me.Panel11.TabIndex = 11
-        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.Control
@@ -324,16 +324,6 @@ Partial Class Dashboard
         Me.Panel2.Size = New System.Drawing.Size(905, 224)
         Me.Panel2.TabIndex = 11
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(41, 146)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(361, 46)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Completed Orders"
-        '
         'lblCompletedOrders
         '
         Me.lblCompletedOrders.AutoSize = True
@@ -343,6 +333,16 @@ Partial Class Dashboard
         Me.lblCompletedOrders.Size = New System.Drawing.Size(395, 52)
         Me.lblCompletedOrders.TabIndex = 7
         Me.lblCompletedOrders.Text = "Completed Orders"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(41, 146)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(361, 46)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Completed Orders"
         '
         'Dashboard
         '

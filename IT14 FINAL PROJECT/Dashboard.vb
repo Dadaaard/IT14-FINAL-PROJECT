@@ -13,6 +13,9 @@
 
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         View_Dashboard()
+        Load_MonthlySales()
+        Load_WeeklySales()
+        Load_AnnuallySales()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
