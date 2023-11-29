@@ -41,14 +41,14 @@ Partial Class AddOrder
         '
         'datetime
         '
-        Me.datetime.CustomFormat = "MM-dd-yyyy"
+        Me.datetime.CustomFormat = "yyyy-MM-dd"
         Me.datetime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.datetime.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.datetime.Location = New System.Drawing.Point(201, 179)
         Me.datetime.Name = "datetime"
         Me.datetime.Size = New System.Drawing.Size(262, 30)
         Me.datetime.TabIndex = 30
-        Me.datetime.Value = New Date(2023, 11, 21, 12, 17, 29, 0)
+        Me.datetime.Value = New Date(2023, 11, 29, 0, 0, 0, 0)
         '
         'Label7
         '

@@ -15,11 +15,11 @@
 
         CustomerName = txtCustomerName.Text
         CustomerNumber = txtCustomerNumber.Text
-        OrderDate = datetime.Value.Date
+        OrderDate = datetime.Text
         OrderType = txtOrderType.Text
         Quantity = txtQuantity.Text
         Description = RichTextBox1.Text
-
         Add_Orders(CustomerName, CustomerNumber, OrderDate, OrderType, Quantity, Description)
+
     End Sub
 End Class
