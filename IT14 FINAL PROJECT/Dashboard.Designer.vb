@@ -51,6 +51,7 @@ Partial Class Dashboard
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblCompletedOrders = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnAccounts = New System.Windows.Forms.Button()
         Me.Panel10.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -63,6 +64,7 @@ Partial Class Dashboard
         'Panel10
         '
         Me.Panel10.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.Panel10.Controls.Add(Me.btnAccounts)
         Me.Panel10.Controls.Add(Me.Panel11)
         Me.Panel10.Controls.Add(Me.Button4)
         Me.Panel10.Controls.Add(Me.Panel12)
@@ -344,6 +346,15 @@ Partial Class Dashboard
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Completed Orders"
         '
+        'btnAccounts
+        '
+        Me.btnAccounts.Location = New System.Drawing.Point(1526, 114)
+        Me.btnAccounts.Name = "btnAccounts"
+        Me.btnAccounts.Size = New System.Drawing.Size(175, 61)
+        Me.btnAccounts.TabIndex = 16
+        Me.btnAccounts.Text = "ACCOUNT"
+        Me.btnAccounts.UseVisualStyleBackColor = True
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -406,4 +417,5 @@ Partial Class Dashboard
     Friend WithEvents Panel2 As Panel
     Friend WithEvents lblCompletedOrders As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents btnAccounts As Button
 End Class

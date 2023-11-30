@@ -35,17 +35,18 @@ Partial Class Sales
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.lblAnnuallySales = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.lblMonthlySales = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.lblWeeklySales = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblMonthlySales = New System.Windows.Forms.Label()
-        Me.lblWeeklySales = New System.Windows.Forms.Label()
-        Me.lblAnnuallySales = New System.Windows.Forms.Label()
+        Me.btnAccounts = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvSales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -59,6 +60,7 @@ Partial Class Sales
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.Panel1.Controls.Add(Me.btnAccounts)
         Me.Panel1.Controls.Add(Me.Panel11)
         Me.Panel1.Controls.Add(Me.Panel12)
         Me.Panel1.Controls.Add(Me.Button8)
@@ -186,6 +188,16 @@ Partial Class Sales
         Me.Panel5.Size = New System.Drawing.Size(267, 247)
         Me.Panel5.TabIndex = 23
         '
+        'lblAnnuallySales
+        '
+        Me.lblAnnuallySales.AutoSize = True
+        Me.lblAnnuallySales.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAnnuallySales.Location = New System.Drawing.Point(58, 137)
+        Me.lblAnnuallySales.Name = "lblAnnuallySales"
+        Me.lblAnnuallySales.Size = New System.Drawing.Size(101, 32)
+        Me.lblAnnuallySales.TabIndex = 23
+        Me.lblAnnuallySales.Text = "Label6"
+        '
         'Panel8
         '
         Me.Panel8.BackColor = System.Drawing.Color.LightBlue
@@ -213,6 +225,16 @@ Partial Class Sales
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(267, 247)
         Me.Panel4.TabIndex = 22
+        '
+        'lblMonthlySales
+        '
+        Me.lblMonthlySales.AutoSize = True
+        Me.lblMonthlySales.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMonthlySales.Location = New System.Drawing.Point(58, 119)
+        Me.lblMonthlySales.Name = "lblMonthlySales"
+        Me.lblMonthlySales.Size = New System.Drawing.Size(101, 32)
+        Me.lblMonthlySales.TabIndex = 22
+        Me.lblMonthlySales.Text = "Label6"
         '
         'Panel7
         '
@@ -242,6 +264,16 @@ Partial Class Sales
         Me.Panel3.Size = New System.Drawing.Size(267, 247)
         Me.Panel3.TabIndex = 21
         '
+        'lblWeeklySales
+        '
+        Me.lblWeeklySales.AutoSize = True
+        Me.lblWeeklySales.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWeeklySales.Location = New System.Drawing.Point(56, 119)
+        Me.lblWeeklySales.Name = "lblWeeklySales"
+        Me.lblWeeklySales.Size = New System.Drawing.Size(101, 32)
+        Me.lblWeeklySales.TabIndex = 23
+        Me.lblWeeklySales.Text = "Label6"
+        '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.LightBlue
@@ -260,35 +292,14 @@ Partial Class Sales
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Weekly"
         '
-        'lblMonthlySales
+        'btnAccounts
         '
-        Me.lblMonthlySales.AutoSize = True
-        Me.lblMonthlySales.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMonthlySales.Location = New System.Drawing.Point(58, 119)
-        Me.lblMonthlySales.Name = "lblMonthlySales"
-        Me.lblMonthlySales.Size = New System.Drawing.Size(101, 32)
-        Me.lblMonthlySales.TabIndex = 22
-        Me.lblMonthlySales.Text = "Label6"
-        '
-        'lblWeeklySales
-        '
-        Me.lblWeeklySales.AutoSize = True
-        Me.lblWeeklySales.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWeeklySales.Location = New System.Drawing.Point(56, 119)
-        Me.lblWeeklySales.Name = "lblWeeklySales"
-        Me.lblWeeklySales.Size = New System.Drawing.Size(101, 32)
-        Me.lblWeeklySales.TabIndex = 23
-        Me.lblWeeklySales.Text = "Label6"
-        '
-        'lblAnnuallySales
-        '
-        Me.lblAnnuallySales.AutoSize = True
-        Me.lblAnnuallySales.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAnnuallySales.Location = New System.Drawing.Point(58, 137)
-        Me.lblAnnuallySales.Name = "lblAnnuallySales"
-        Me.lblAnnuallySales.Size = New System.Drawing.Size(101, 32)
-        Me.lblAnnuallySales.TabIndex = 23
-        Me.lblAnnuallySales.Text = "Label6"
+        Me.btnAccounts.Location = New System.Drawing.Point(1554, 125)
+        Me.btnAccounts.Name = "btnAccounts"
+        Me.btnAccounts.Size = New System.Drawing.Size(175, 61)
+        Me.btnAccounts.TabIndex = 16
+        Me.btnAccounts.Text = "ACCOUNT"
+        Me.btnAccounts.UseVisualStyleBackColor = True
         '
         'Sales
         '
@@ -349,4 +360,5 @@ Partial Class Sales
     Friend WithEvents lblMonthlySales As Label
     Friend WithEvents lblWeeklySales As Label
     Friend WithEvents lblAnnuallySales As Label
+    Friend WithEvents btnAccounts As Button
 End Class

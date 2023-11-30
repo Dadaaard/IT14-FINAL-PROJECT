@@ -44,6 +44,7 @@ Partial Class Inventory
         Me.Label2 = New System.Windows.Forms.Label()
         Me.numeric1 = New System.Windows.Forms.NumericUpDown()
         Me.btnUpdateQuantity = New System.Windows.Forms.Button()
+        Me.btnAccounts = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dgOrderList, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvStocks, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,6 +54,7 @@ Partial Class Inventory
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.Panel1.Controls.Add(Me.btnAccounts)
         Me.Panel1.Controls.Add(Me.Panel11)
         Me.Panel1.Controls.Add(Me.Panel12)
         Me.Panel1.Controls.Add(Me.Button8)
@@ -277,6 +279,15 @@ Partial Class Inventory
         Me.btnUpdateQuantity.UseVisualStyleBackColor = True
         Me.btnUpdateQuantity.Visible = False
         '
+        'btnAccounts
+        '
+        Me.btnAccounts.Location = New System.Drawing.Point(1545, 129)
+        Me.btnAccounts.Name = "btnAccounts"
+        Me.btnAccounts.Size = New System.Drawing.Size(175, 61)
+        Me.btnAccounts.TabIndex = 15
+        Me.btnAccounts.Text = "ACCOUNT"
+        Me.btnAccounts.UseVisualStyleBackColor = True
+        '
         'Inventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -331,4 +342,5 @@ Partial Class Inventory
     Friend WithEvents Label2 As Label
     Friend WithEvents numeric1 As NumericUpDown
     Friend WithEvents btnUpdateQuantity As Button
+    Friend WithEvents btnAccounts As Button
 End Class

@@ -1,11 +1,8 @@
 ﻿Public Class AddOrder
 
-    Dim CustomerNumber, Quantity As Integer
-    Dim CustomerName, OrderType, Description, OrderDate As String
+    Dim Quantity As Integer
+    Dim CustomerName, OrderType, Description, OrderDate, CustomerNumber As String
 
-    Private Sub AddOrder_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()

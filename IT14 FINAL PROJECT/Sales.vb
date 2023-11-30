@@ -23,4 +23,8 @@
         Me.Close()
 
     End Sub
+
+    Private Sub btnAccounts_Click(sender As Object, e As EventArgs) Handles btnAccounts.Click
+        AccountDetails.Show()
+    End Sub
 End Class

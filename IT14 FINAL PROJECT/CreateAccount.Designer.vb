@@ -31,13 +31,7 @@ Partial Class CreateAccount
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.txtEMail = New System.Windows.Forms.TextBox()
-        Me.txtContactNumber = New System.Windows.Forms.TextBox()
-        Me.txtLastName = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtFirstName = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btnCreateAccount = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -62,13 +56,7 @@ Partial Class CreateAccount
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.txtUsername)
         Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.txtEMail)
-        Me.Panel1.Controls.Add(Me.txtContactNumber)
-        Me.Panel1.Controls.Add(Me.txtLastName)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.txtFirstName)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.btnCreateAccount)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -95,6 +83,7 @@ Partial Class CreateAccount
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.Size = New System.Drawing.Size(313, 32)
         Me.txtConfirmPassword.TabIndex = 15
+        Me.txtConfirmPassword.UseSystemPasswordChar = True
         '
         'Label7
         '
@@ -114,6 +103,7 @@ Partial Class CreateAccount
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(313, 32)
         Me.txtPassword.TabIndex = 13
+        Me.txtPassword.UseSystemPasswordChar = True
         '
         'Label6
         '
@@ -144,26 +134,6 @@ Partial Class CreateAccount
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Email"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(119, 279)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(125, 20)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Contact Number"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Location = New System.Drawing.Point(119, 219)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 20)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Last Name"
-        '
         'txtEMail
         '
         Me.txtEMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -172,43 +142,6 @@ Partial Class CreateAccount
         Me.txtEMail.Name = "txtEMail"
         Me.txtEMail.Size = New System.Drawing.Size(313, 32)
         Me.txtEMail.TabIndex = 7
-        '
-        'txtContactNumber
-        '
-        Me.txtContactNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtContactNumber.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContactNumber.Location = New System.Drawing.Point(316, 271)
-        Me.txtContactNumber.Name = "txtContactNumber"
-        Me.txtContactNumber.Size = New System.Drawing.Size(313, 32)
-        Me.txtContactNumber.TabIndex = 6
-        '
-        'txtLastName
-        '
-        Me.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLastName.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLastName.Location = New System.Drawing.Point(316, 211)
-        Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(313, 32)
-        Me.txtLastName.TabIndex = 5
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(119, 161)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(86, 20)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "First Name"
-        '
-        'txtFirstName
-        '
-        Me.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtFirstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFirstName.Location = New System.Drawing.Point(318, 153)
-        Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(311, 32)
-        Me.txtFirstName.TabIndex = 3
         '
         'Button2
         '
@@ -267,16 +200,10 @@ Partial Class CreateAccount
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnCreateAccount As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtFirstName As TextBox
     Friend WithEvents Button2 As Button
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents txtEMail As TextBox
-    Friend WithEvents txtContactNumber As TextBox
-    Friend WithEvents txtLastName As TextBox
     Friend WithEvents txtUsername As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents Label6 As Label

@@ -1,6 +1,5 @@
 ﻿Public Class CreateAccount
-    Dim firstname, lastname, email, username, password, confirmpassword As String
-    Dim contactnumber As Integer
+    Dim email, username, password, confirmpassword As String
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Login.Show()
@@ -9,14 +8,10 @@
     End Sub
 
     Private Sub btnCreateAccount_Click(sender As Object, e As EventArgs) Handles btnCreateAccount.Click
-
-        firstname = txtFirstName.Text
-        lastname = txtLastName.Text
         email = txtEMail.Text
         username = txtUsername.Text
         password = txtPassword.Text
         confirmpassword = txtConfirmPassword.Text
-        contactnumber = txtContactNumber.Text
 
 
         If password <> confirmpassword Then
@@ -25,7 +20,7 @@
             txtConfirmPassword.Clear()
 
         Else
-            Create_Account(firstname, lastname, username, email, confirmpassword, contactnumber)
+            Create_Account(username, email, confirmpassword)
             Login.Show()
             Me.Close()
 

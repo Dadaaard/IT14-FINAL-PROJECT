@@ -56,7 +56,7 @@ Module InventoryModule
         End Try
     End Sub
 
-    Public Sub Add_Orders(ByVal CustomerName As String, ByVal CustomerNumber As Integer, ByVal OrderDate As String, ByVal OrderType As String, ByVal Quantity As Integer, ByVal Description As String)
+    Public Sub Add_Orders(ByVal CustomerName As String, ByVal CustomerNumber As String, ByVal OrderDate As String, ByVal OrderType As String, ByVal Quantity As Integer, ByVal Description As String)
         Try
             Using connection As New SQLiteConnection(DBConnectionString)
                 connection.Open()

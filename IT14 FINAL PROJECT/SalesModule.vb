@@ -42,19 +42,19 @@ Module SalesModule
             connection.Open()
 
             Dim query As String = "SELECT strftime('%m', Sales_OrderDate) as valMonth, 
-           SUM(Sales_TotalPrice) as valTotalDay 
-    FROM Sales
-    WHERE strftime('%m', Sales_OrderDate) = strftime('%m', CURRENT_DATE)
-    GROUP BY valMonth;"
+       SUM(Sales_TotalPrice) as valTotalDay 
+FROM Sales
+WHERE strftime('%m', Sales_OrderDate) = strftime('%m', CURRENT_DATE)
+GROUP BY valMonth;"
             Using cmd As New SQLiteCommand(query, connection)
                 Dim dr As SQLiteDataReader
                 dr = cmd.ExecuteReader
                 If dr.Read Then
-                    Dim valTotalDay As String = dr("valTotalDay").ToString()
-                    Dim valTotalDayWithPHP As String = valTotalDay & " PHP"
+                    Dim valTotalDay As Decimal = Convert.ToDecimal(dr("valTotalDay"))
+                    Dim valTotalDayFormatted As String = valTotalDay.ToString("C")
 
-                    Sales.lblMonthlySales.Text = valTotalDayWithPHP
-                    Dashboard.lblMonthly.Text = valTotalDayWithPHP
+                    Sales.lblMonthlySales.Text = valTotalDayFormatted
+                    Dashboard.lblMonthly.Text = valTotalDayFormatted
 
                     dr.Close()
                     connection.Close()
@@ -62,6 +62,7 @@ Module SalesModule
             End Using
         End Using
     End Sub
+
 
 
 
@@ -76,11 +77,11 @@ FROM Sales WHERE Sales_OrderDate >= DATE('now', 'weekday 0', '-6 days')
                 Dim dr As SQLiteDataReader
                 dr = cmd.ExecuteReader
                 If dr.Read Then
-                    Dim valTotalWeek As String = dr("valTotalWeek").ToString()
-                    Dim valTotalWeekWithPHP As String = valTotalWeek & " PHP"
+                    Dim valTotalWeek As Decimal = Convert.ToDecimal(dr("valTotalWeek"))
+                    Dim valTotalWeekFormatted As String = valTotalWeek.ToString("C")
 
-                    Sales.lblWeeklySales.Text = valTotalWeekWithPHP
-                    Dashboard.lblWeekly.Text = valTotalWeekWithPHP
+                    Sales.lblWeeklySales.Text = valTotalWeekFormatted
+                    Dashboard.lblWeekly.Text = valTotalWeekFormatted
 
                     dr.Close()
                     connection.Close()
@@ -88,6 +89,7 @@ FROM Sales WHERE Sales_OrderDate >= DATE('now', 'weekday 0', '-6 days')
             End Using
         End Using
     End Sub
+
 
 
 
@@ -97,19 +99,19 @@ FROM Sales WHERE Sales_OrderDate >= DATE('now', 'weekday 0', '-6 days')
             connection.Open()
 
             Dim query As String = "SELECT strftime('%Y', Sales_OrderDate) as valYear,
-           SUM(Sales_TotalPrice) as valTotalYear 
-    FROM Sales
-    WHERE strftime('%Y', Sales_OrderDate) = strftime('%Y', 'now')
-    GROUP BY valYear;"
+       SUM(Sales_TotalPrice) as valTotalYear 
+FROM Sales
+WHERE strftime('%Y', Sales_OrderDate) = strftime('%Y', 'now')
+GROUP BY valYear;"
             Using cmd As New SQLiteCommand(query, connection)
                 Dim dr As SQLiteDataReader
                 dr = cmd.ExecuteReader
                 If dr.Read Then
-                    Dim valTotalYear As String = dr("valTotalYear").ToString()
-                    Dim valTotalYearWithPHP As String = valTotalYear & " PHP"
+                    Dim valTotalYear As Decimal = Convert.ToDecimal(dr("valTotalYear"))
+                    Dim valTotalYearFormatted As String = valTotalYear.ToString("C")
 
-                    Sales.lblAnnuallySales.Text = valTotalYearWithPHP
-                    Dashboard.lblAnnually.Text = valTotalYearWithPHP
+                    Sales.lblAnnuallySales.Text = valTotalYearFormatted
+                    Dashboard.lblAnnually.Text = valTotalYearFormatted
 
                     dr.Close()
                     connection.Close()
@@ -117,7 +119,8 @@ FROM Sales WHERE Sales_OrderDate >= DATE('now', 'weekday 0', '-6 days')
             End Using
         End Using
     End Sub
-    'SELECT SUM(Sales_TotalPrice) FROM Sales WHERE Sales_OrderDate BETWEEN '21/11/2023' AND '21/13/2023'
+
+
 
 
 

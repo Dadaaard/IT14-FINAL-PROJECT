@@ -70,6 +70,7 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.118.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -92,6 +93,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountDetails.Designer.vb">
+      <DependentUpon>AccountDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AccountDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AccountModule.vb" />
     <Compile Include="AddOrder.Designer.vb">
       <DependentUpon>AddOrder.vb</DependentUpon>
@@ -188,6 +195,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AccountDetails.resx">
+      <DependentUpon>AccountDetails.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddOrder.resx">
       <DependentUpon>AddOrder.vb</DependentUpon>
     </EmbeddedResource>
