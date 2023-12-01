@@ -19,6 +19,13 @@
             txtPassword.Clear()
             txtConfirmPassword.Clear()
 
+        ElseIf email = "" Then
+            MsgBox("Please input email.")
+        ElseIf username = "" Then
+            MsgBox("Please input username")
+
+        ElseIf password = "" And confirmpassword = "" Then
+            MsgBox("Please input valid password.")
         Else
             Create_Account(username, email, confirmpassword)
             Login.Show()

@@ -8,6 +8,7 @@
     Private Sub UpdateOrder_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         indexer = Inventory.dgOrderList.CurrentRow.Index
         lblName.Text = Inventory.dgOrderList.Rows(indexer).Cells(1).Value.ToString
+        lblDate.Text = Inventory.dgOrderList.Rows(indexer).Cells(4).Value.ToString
 
 
     End Sub

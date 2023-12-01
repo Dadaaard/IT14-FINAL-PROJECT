@@ -42,10 +42,9 @@ Module SalesModule
             connection.Open()
 
             Dim query As String = "SELECT strftime('%m', Sales_OrderDate) as valMonth, 
-       SUM(Sales_TotalPrice) as valTotalDay 
-FROM Sales
-WHERE strftime('%m', Sales_OrderDate) = strftime('%m', CURRENT_DATE)
-GROUP BY valMonth;"
+        SUM(Sales_TotalPrice) as valTotalDay FROM Sales
+        WHERE strftime('%m', Sales_OrderDate) = strftime('%m', CURRENT_DATE)
+        GROUP BY valMonth;"
             Using cmd As New SQLiteCommand(query, connection)
                 Dim dr As SQLiteDataReader
                 dr = cmd.ExecuteReader
@@ -58,6 +57,11 @@ GROUP BY valMonth;"
 
                     dr.Close()
                     connection.Close()
+                Else
+                    ' if no value for the current month
+                    Sales.lblMonthlySales.Text = "0"
+                    Dashboard.lblMonthly.Text = "0"
+
                 End If
             End Using
         End Using
@@ -85,6 +89,10 @@ FROM Sales WHERE Sales_OrderDate >= DATE('now', 'weekday 0', '-6 days')
 
                     dr.Close()
                     connection.Close()
+                Else
+                    ' if no value for the current week
+                    Sales.lblWeeklySales.Text = "0"
+                    Dashboard.lblWeekly.Text = "0"
                 End If
             End Using
         End Using
@@ -115,6 +123,11 @@ GROUP BY valYear;"
 
                     dr.Close()
                     connection.Close()
+
+                Else
+                    ' if no value for the current Annually
+                    Sales.lblAnnuallySales.Text = "0"
+                    Dashboard.lblAnnually.Text = "0"
                 End If
             End Using
         End Using

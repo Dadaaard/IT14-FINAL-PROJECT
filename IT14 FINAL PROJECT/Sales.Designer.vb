@@ -24,6 +24,7 @@ Partial Class Sales
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Sales))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnAccounts = New System.Windows.Forms.Button()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Button8 = New System.Windows.Forms.Button()
@@ -46,7 +47,6 @@ Partial Class Sales
         Me.lblWeeklySales = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnAccounts = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvSales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -71,6 +71,15 @@ Partial Class Sales
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1920, 207)
         Me.Panel1.TabIndex = 15
+        '
+        'btnAccounts
+        '
+        Me.btnAccounts.Location = New System.Drawing.Point(1554, 125)
+        Me.btnAccounts.Name = "btnAccounts"
+        Me.btnAccounts.Size = New System.Drawing.Size(175, 61)
+        Me.btnAccounts.TabIndex = 16
+        Me.btnAccounts.Text = "ACCOUNT"
+        Me.btnAccounts.UseVisualStyleBackColor = True
         '
         'Panel11
         '
@@ -291,15 +300,6 @@ Partial Class Sales
         Me.Label3.Size = New System.Drawing.Size(60, 20)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Weekly"
-        '
-        'btnAccounts
-        '
-        Me.btnAccounts.Location = New System.Drawing.Point(1554, 125)
-        Me.btnAccounts.Name = "btnAccounts"
-        Me.btnAccounts.Size = New System.Drawing.Size(175, 61)
-        Me.btnAccounts.TabIndex = 16
-        Me.btnAccounts.Text = "ACCOUNT"
-        Me.btnAccounts.UseVisualStyleBackColor = True
         '
         'Sales
         '

@@ -31,6 +31,7 @@ Partial Class AccountDetails
         Me.txtConfirmPassword = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblUsername = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -113,11 +114,21 @@ Partial Class AccountDetails
         Me.lblUsername.TabIndex = 8
         Me.lblUsername.Text = "Username"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(50, 413)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(99, 34)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Back"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'AccountDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(588, 480)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lblUsername)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtConfirmPassword)
@@ -143,4 +154,5 @@ Partial Class AccountDetails
     Friend WithEvents txtConfirmPassword As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents lblUsername As Label
+    Friend WithEvents Button1 As Button
 End Class
