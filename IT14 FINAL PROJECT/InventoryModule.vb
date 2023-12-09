@@ -35,8 +35,6 @@ Module InventoryModule
 
             Dim con As New SQLiteConnection(DBConnectionString)
             con.Open()
-
-
             ds = New DataSet
 
             da = New SQLiteDataAdapter("SELECT Orders_Id AS 'Id', Orders_CustomerName AS 'Customer Name', Orders_OrderType AS 'Type Of Order', Orders_Quantity AS 'Quantity', Orders_OrderDate AS 'Order Date' FROM Orders", con)
@@ -44,6 +42,7 @@ Module InventoryModule
             da.Fill(ds, "Orders")
 
             Inventory.dgOrderList.DataSource = ds.Tables(0)
+
 
         Catch ex As SQLiteException
 
@@ -56,13 +55,13 @@ Module InventoryModule
         End Try
     End Sub
 
-    Public Sub Add_Orders(ByVal CustomerName As String, ByVal CustomerNumber As String, ByVal OrderDate As String, ByVal OrderType As String, ByVal Quantity As Integer, ByVal Description As String)
+    Public Sub Add_Orders(ByVal CustomerName As String, ByVal CustomerNumber As String, ByVal OrderDate As String, ByVal OrderType As String, ByVal Quantity As Integer, ByVal Description As String, ByVal selectedItem As String, ByVal setQuantity As Integer)
         Try
             Using connection As New SQLiteConnection(DBConnectionString)
                 connection.Open()
 
-                Dim query As String = "INSERT INTO Orders (Orders_CustomerName,Orders_CustomerNumber,Orders_OrderDate,Orders_OrderType,Orders_Quantity,Orders_Description) VALUES (@CustomerName, @CustomerNumber,@OrderDate,@OrderType,@Quantity,@Description)"
-                Using cmd As New SQLiteCommand(query, connection)
+                Dim insertOrderQuery As String = "INSERT INTO Orders (Orders_CustomerName, Orders_CustomerNumber, Orders_OrderDate, Orders_OrderType, Orders_Quantity, Orders_Description) VALUES (@CustomerName, @CustomerNumber, @OrderDate, @OrderType, @Quantity, @Description)"
+                Using cmd As New SQLiteCommand(insertOrderQuery, connection)
                     cmd.Parameters.AddWithValue("@CustomerName", CustomerName)
                     cmd.Parameters.AddWithValue("@CustomerNumber", CustomerNumber)
                     cmd.Parameters.AddWithValue("@OrderDate", OrderDate)
@@ -71,24 +70,38 @@ Module InventoryModule
                     cmd.Parameters.AddWithValue("@Description", Description)
 
                     Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
                     If rowsAffected > 0 Then
                         MessageBox.Show("Order added successfully.")
                         loadOrders()
-                        connection.Close()
-                        AddOrder.Close()
 
+                        ' Retrieve the last inserted Orders_Id
+                        Dim getLastInsertedIdQuery As String = "SELECT last_insert_rowid()"
+                        Using getLastIdCmd As New SQLiteCommand(getLastInsertedIdQuery, connection)
+                            Dim ordersId As Integer = Convert.ToInt32(getLastIdCmd.ExecuteScalar())
+
+                            ' Insert into Items_Used table
+                            Dim insertItemsUsedQuery As String = "INSERT INTO Items_Used (Name, Quantity, Orders_Id) VALUES (@Name, @Quantity, @OrdersId)"
+                            Using insertItemsUsedCmd As New SQLiteCommand(insertItemsUsedQuery, connection)
+                                insertItemsUsedCmd.Parameters.AddWithValue("@Name", selectedItem)
+                                insertItemsUsedCmd.Parameters.AddWithValue("@Quantity", setQuantity)
+                                insertItemsUsedCmd.Parameters.AddWithValue("@OrdersId", ordersId)
+                                insertItemsUsedCmd.ExecuteNonQuery()
+                            End Using
+                            connection.Close()
+                            AddOrder.Close()
+                        End Using
                     Else
                         MessageBox.Show("Failed to add order.")
                     End If
-
-
                 End Using
             End Using
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
-
         End Try
+    End Sub
 
+    Public Sub Item_Used(ByVal)
 
     End Sub
 
@@ -148,11 +161,9 @@ Module InventoryModule
                     ViewOrders.lblOrderType.Text = dr(3).ToString
                     ViewOrders.lblQuantity.Text = dr(4).ToString
                     ViewOrders.lblDescription.Text = dr(5).ToString
-
                     dr.Close()
+
                     connection.Close()
-
-
                 Else
                     MsgBox("No Data Found!!")
                 End If
@@ -160,6 +171,39 @@ Module InventoryModule
             End Using
         End Using
     End Sub
+
+    Public Sub Get_UsedItems()
+        Try
+            If Inventory.dgOrderList.CurrentRow IsNot Nothing Then
+                Dim idOrders As Integer = Convert.ToInt32(Inventory.dgOrderList.CurrentRow.Cells(0).Value)
+
+                Using connection As New SQLiteConnection(DBConnectionString)
+                    connection.Open()
+
+                    Dim query As String = "SELECT Name, Quantity FROM Items_Used WHERE Orders_Id = '" & idOrders & "'"
+                    Using cmd As New SQLiteCommand(query, connection)
+                        Dim dr As SQLiteDataReader = cmd.ExecuteReader()
+
+                        If dr.Read() Then
+                            ' Check for null before accessing values
+                            Dim name As String = dr(0).ToString()
+                            Dim quantity As Integer = dr(1).ToString()
+                            ViewOrders.DataGridView1.Rows.Add(name, quantity)
+                        Else
+                            MsgBox("No Data Found!!")
+                        End If
+
+                        dr.Close()
+                    End Using
+                End Using
+            Else
+                MsgBox("No selected row in the DataGridView.")
+            End If
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message)
+        End Try
+    End Sub
+
 
     Public Sub Load_Sales(ByVal price As Integer)
 
@@ -177,11 +221,12 @@ Module InventoryModule
             Using connection As New SQLiteConnection(DBConnectionString)
                 connection.Open()
 
-                Dim query As String = "INSERT INTO Sales (Sales_Id,Sales_ItemName,Sales_OrderDate,Sales_Quantity,Sales_SetPrice,Sales_TotalPrice) VALUES ('" & id & "', '" & itemname & "','" & orderdate & "','" & quantity & "', '" & setprice & "','" & totalprice & "')"
+                Dim query As String = "INSERT INTO Sales (Sales_ItemName,Sales_OrderDate,Sales_Quantity,Sales_SetPrice,Sales_TotalPrice,Items_Id,Orders_Id) VALUES ('" & itemname & "','" & orderdate & "','" & quantity & "', '" & setprice & "','" & totalprice & "',(SELECT Items_Id FROM Items_Used WHERE Orders_Id = '" & id & "' ),'" & id & "')"
                 Using cmd As New SQLiteCommand(query, connection)
                     cmd.ExecuteNonQuery()
                     MessageBox.Show("Price is Set!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Pricing.Close()
+                    Stock_Out(id)
                     Delete_Orders(idStocks)
                     connection.Close()
                 End Using
@@ -189,6 +234,49 @@ Module InventoryModule
         Catch ex As Exception
             MessageBox.Show(ex.Message & "openCon", "Database Connection Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Public Sub Stock_Out(ByVal id As Integer)
+        Dim usedQuantity As Integer
+        Using connection As New SQLiteConnection(DBConnectionString)
+            connection.Open()
+
+            Dim query As String = "SELECT Quantity FROM Items_Used WHERE Orders_Id = '" & id & "'  "
+            Using cmd As New SQLiteCommand(query, connection)
+                Dim dr As SQLiteDataReader
+                dr = cmd.ExecuteReader
+                If dr.Read Then
+                    usedQuantity = dr(0).ToString
+                    StockOut_Calculations(usedQuantity)
+                    dr.Close()
+                    connection.Close()
+                Else
+                    MsgBox("No Data Found!!")
+                End If
+
+            End Using
+        End Using
+    End Sub
+
+    Public Sub StockOut_Calculations(ByVal usedQuantity As Integer)
+        'Using connection As New SQLiteConnection(DBConnectionString)
+        '    connection.Open()
+        MsgBox(usedQuantity)
+        '    Dim query As String = "SELECT Quantity FROM Items_Used WHERE Orders_Id = '" & id & "'  "
+        '    Using cmd As New SQLiteCommand(query, connection)
+        '        Dim dr As SQLiteDataReader
+        '        dr = cmd.ExecuteReader
+        '        If dr.Read Then
+        '            usedQuantity = dr(0).ToString
+        '            MsgBox(usedQuantity)
+        '            dr.Close()
+        '            connection.Close()
+        '        Else
+        '            MsgBox("No Data Found!!")
+        '        End If
+
+        '    End Using
+        'End Using
     End Sub
 
 End Module

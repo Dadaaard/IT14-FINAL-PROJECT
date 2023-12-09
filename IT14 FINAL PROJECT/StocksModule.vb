@@ -43,6 +43,7 @@ Module StocksModule
         End Try
 
     End Sub
+
     'Read
 
 
@@ -71,7 +72,6 @@ Module StocksModule
 
         End Try
     End Sub
-
 
     'Update
 
@@ -178,7 +178,14 @@ Module StocksModule
         End Using
     End Sub
 
+    Public Sub Stocks_History()
 
+        Dim currentTime As Date = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+
+
+        MsgBox(currentTime)
+
+    End Sub
 
 
 

@@ -1,4 +1,6 @@
-﻿Public Class Inventory
+﻿Imports System.Drawing.Drawing2D
+
+Public Class Inventory
 
     Public indexCount As Integer
 
@@ -11,8 +13,25 @@
     End Sub
 
     Public Sub Inventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim GBrush As New LinearGradientBrush(Me.DisplayRectangle, Color.DarkSlateGray, Color.DarkCyan, LinearGradientMode.Vertical)
+
+        Me.BackgroundImage = New Bitmap(Me.Width, Me.Height)
+
+        Dim g As Graphics = Graphics.FromImage(Me.BackgroundImage)
+
+        g.FillRectangle(GBrush, Me.DisplayRectangle)
+
         loadOrders()
         loadStocks()
+
+
+        'For Each row As DataGridViewRow In dgvStocks.Rows
+        '    If Not row.IsNewRow Then
+        '        AddOrder.RadioButton1.Text = row.Cells(1).Value.ToString
+        '        MessageBox.Show(row.Cells(1).Value.ToString)
+        '    End If
+        'Next
 
     End Sub
 
@@ -86,12 +105,6 @@
 
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        Login.Show()
-        Me.Close()
-
-    End Sub
-
     Public Sub btnUpdateQuantity_Click(sender As Object, e As EventArgs) Handles btnUpdateQuantity.Click
         Dim quantityval As Integer
         quantityval = numeric1.Value
@@ -112,5 +125,19 @@
     Private Sub btnAccounts_Click(sender As Object, e As EventArgs) Handles btnAccounts.Click
         AccountDetails.Show()
 
+    End Sub
+
+    Private Sub btnHistory_Click(sender As Object, e As EventArgs) Handles btnHistory.Click
+        StocksHistory.Show()
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Login.Show()
+        Me.Close()
     End Sub
 End Class

@@ -36,6 +36,11 @@ Partial Class ViewOrders
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblDescription
@@ -102,7 +107,7 @@ Partial Class ViewOrders
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(166, 319)
+        Me.Button1.Location = New System.Drawing.Point(167, 484)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(76, 35)
         Me.Button1.TabIndex = 20
@@ -163,11 +168,50 @@ Partial Class ViewOrders
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Customer Name"
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2})
+        Me.DataGridView1.Location = New System.Drawing.Point(37, 341)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.RowHeadersWidth = 62
+        Me.DataGridView1.RowTemplate.Height = 28
+        Me.DataGridView1.Size = New System.Drawing.Size(348, 120)
+        Me.DataGridView1.TabIndex = 28
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(23, 305)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(95, 20)
+        Me.Label7.TabIndex = 29
+        Me.Label7.Text = "Items Used:"
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Name"
+        Me.Column1.MinimumWidth = 8
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 150
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Quantity"
+        Me.Column2.MinimumWidth = 8
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 150
+        '
         'ViewOrders
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(412, 409)
+        Me.ClientSize = New System.Drawing.Size(412, 541)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.lblDescription)
         Me.Controls.Add(Me.lblQuantity)
         Me.Controls.Add(Me.lblOrderType)
@@ -184,6 +228,7 @@ Partial Class ViewOrders
         Me.Controls.Add(Me.Label1)
         Me.Name = "ViewOrders"
         Me.Text = "ViewOrders"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -203,4 +248,8 @@ Partial Class ViewOrders
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Label7 As Label
 End Class

@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SQLite
+Imports System.Security.Cryptography.X509Certificates
 
 Module SalesModule
     Public con As New SQLiteConnection
@@ -42,9 +43,11 @@ Module SalesModule
             connection.Open()
 
             Dim query As String = "SELECT strftime('%m', Sales_OrderDate) as valMonth, 
-        SUM(Sales_TotalPrice) as valTotalDay FROM Sales
-        WHERE strftime('%m', Sales_OrderDate) = strftime('%m', CURRENT_DATE)
-        GROUP BY valMonth;"
+       COALESCE(SUM(Sales_TotalPrice), 0) as valTotalDay 
+FROM Sales
+WHERE strftime('%m', Sales_OrderDate) = strftime('%m', CURRENT_DATE)
+GROUP BY valMonth;  
+"
             Using cmd As New SQLiteCommand(query, connection)
                 Dim dr As SQLiteDataReader
                 dr = cmd.ExecuteReader
@@ -59,8 +62,7 @@ Module SalesModule
                     connection.Close()
                 Else
                     ' if no value for the current month
-                    Sales.lblMonthlySales.Text = "0"
-                    Dashboard.lblMonthly.Text = "0"
+
 
                 End If
             End Using
@@ -71,28 +73,34 @@ Module SalesModule
 
 
     Public Sub Load_WeeklySales()
+        Dim valTotalWeek As Decimal
+        Dim valTotalWeekFormatted As String
         Using connection As New SQLiteConnection(DBConnectionString)
             connection.Open()
-
-            Dim query As String = "SELECT SUM(Sales_TotalPrice) as valTotalWeek 
-FROM Sales WHERE Sales_OrderDate >= DATE('now', 'weekday 0', '-6 days')
+            Dim query As String = "SELECT COALESCE(SUM(Sales_TotalPrice), 0) as valTotalWeek FROM Sales 
+WHERE Sales_OrderDate >= DATE('now', 'weekday 0', '-6 days')
   AND Sales_OrderDate < DATE('now', 'weekday 0', '+1 day');"
+
+
+
+            '            Select Case SUM(Sales_TotalPrice) As valTotalWeek 
+            'From Sales Where Sales_OrderDate >= Date('now', 'weekday 0', '-6 days')
+            '  And Sales_OrderDate < Date('now', 'weekday 0', '+1 day')
             Using cmd As New SQLiteCommand(query, connection)
                 Dim dr As SQLiteDataReader
                 dr = cmd.ExecuteReader
                 If dr.Read Then
-                    Dim valTotalWeek As Decimal = Convert.ToDecimal(dr("valTotalWeek"))
-                    Dim valTotalWeekFormatted As String = valTotalWeek.ToString("C")
+                    valTotalWeek = Convert.ToDecimal(dr("valTotalWeek"))
+                    valTotalWeekFormatted = valTotalWeek.ToString("C")
 
                     Sales.lblWeeklySales.Text = valTotalWeekFormatted
                     Dashboard.lblWeekly.Text = valTotalWeekFormatted
 
                     dr.Close()
                     connection.Close()
+
                 Else
-                    ' if no value for the current week
-                    Sales.lblWeeklySales.Text = "0"
-                    Dashboard.lblWeekly.Text = "0"
+
                 End If
             End Using
         End Using

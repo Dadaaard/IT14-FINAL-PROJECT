@@ -92,9 +92,9 @@ Partial Class ViewStocks
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(64, 161)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(44, 20)
+        Me.Label5.Size = New System.Drawing.Size(124, 20)
         Me.Label5.TabIndex = 30
-        Me.Label5.Text = "Price"
+        Me.Label5.Text = "Price Purchased"
         '
         'Label4
         '
