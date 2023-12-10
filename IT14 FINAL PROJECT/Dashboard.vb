@@ -39,4 +39,8 @@ Public Class Dashboard
     Private Sub btnAccounts_Click(sender As Object, e As EventArgs) Handles btnAccounts.Click
         AccountDetails.Show()
     End Sub
+
+    Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles Button4.Click
+        Logout_Account()
+    End Sub
 End Class

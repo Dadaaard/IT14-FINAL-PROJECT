@@ -19,9 +19,7 @@
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        Login.Show()
-        Me.Close()
-
+        Logout_Account()
     End Sub
 
     Private Sub btnAccounts_Click(sender As Object, e As EventArgs) Handles btnAccounts.Click

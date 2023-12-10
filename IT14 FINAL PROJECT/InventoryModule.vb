@@ -1,5 +1,6 @@
 ﻿
 Imports System.Data.SQLite
+Imports System.Windows.Forms.VisualStyles
 
 Module InventoryModule
     Public con As New SQLiteConnection
@@ -42,7 +43,7 @@ Module InventoryModule
             da.Fill(ds, "Orders")
 
             Inventory.dgOrderList.DataSource = ds.Tables(0)
-
+            Inventory.dgOrderList.ClearSelection()
 
         Catch ex As SQLiteException
 
@@ -89,6 +90,7 @@ Module InventoryModule
                                 insertItemsUsedCmd.ExecuteNonQuery()
                             End Using
                             connection.Close()
+
                             AddOrder.Close()
                         End Using
                     Else
@@ -101,9 +103,6 @@ Module InventoryModule
         End Try
     End Sub
 
-    Public Sub Item_Used(ByVal)
-
-    End Sub
 
     Public Sub Update_Orders(ByVal updateCustomerNumber As Integer, ByVal updateOrderType As String, ByVal updateQuantity As Integer, ByVal updateDescription As String, ByVal mainID As Integer)
         Using connection As New SQLiteConnection(DBConnectionString)
@@ -131,16 +130,37 @@ Module InventoryModule
     End Sub
     Public Sub Delete_Orders(ByVal idOrders As Integer)
 
-        Using connection As New SQLiteConnection(DBConnectionString)
-            connection.Open()
+        'Using connection As New SQLiteConnection(DBConnectionString)
+        '    connection.Open()
 
-            Dim query As String = "DELETE from Orders WHERE Orders_Id =  '" & idOrders & "' "
-            Using cmd As New SQLiteCommand(query, connection)
-                cmd.ExecuteNonQuery()
-                connection.Close()
-                loadOrders()
+        '    Dim query As String = "DELETE from Orders WHERE Orders_Id =  '" & idOrders & "' "
+        '    Using cmd As New SQLiteCommand(query, connection)
+        '        cmd.ExecuteNonQuery()
+        '        connection.Close()
+        '        loadOrders()
+        '    End Using
+        'End Using
+
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want To delete this Order?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+        If result = DialogResult.Yes Then
+            Using connection As New SQLiteConnection(DBConnectionString)
+                connection.Open()
+
+                Dim query As String = "DELETE from Orders WHERE Orders_Id =  '" & idOrders & "' "
+                Using cmd As New SQLiteCommand(query, connection)
+                    cmd.ExecuteNonQuery()
+                    connection.Close()
+                    MessageBox.Show("Successfully Deleted!")
+                    connection.Close()
+                    loadOrders()
+                End Using
             End Using
-        End Using
+        Else
+            Inventory.dgOrderList.ClearSelection()
+        End If
+
+
     End Sub
 
     Public Sub View_Orders()
@@ -190,7 +210,7 @@ Module InventoryModule
                             Dim quantity As Integer = dr(1).ToString()
                             ViewOrders.DataGridView1.Rows.Add(name, quantity)
                         Else
-                            MsgBox("No Data Found!!")
+                            MsgBox("No Items Used")
                         End If
 
                         dr.Close()
@@ -223,12 +243,31 @@ Module InventoryModule
 
                 Dim query As String = "INSERT INTO Sales (Sales_ItemName,Sales_OrderDate,Sales_Quantity,Sales_SetPrice,Sales_TotalPrice,Items_Id,Orders_Id) VALUES ('" & itemname & "','" & orderdate & "','" & quantity & "', '" & setprice & "','" & totalprice & "',(SELECT Items_Id FROM Items_Used WHERE Orders_Id = '" & id & "' ),'" & id & "')"
                 Using cmd As New SQLiteCommand(query, connection)
-                    cmd.ExecuteNonQuery()
-                    MessageBox.Show("Price is Set!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Pricing.Close()
-                    Stock_Out(id)
-                    Delete_Orders(idStocks)
-                    connection.Close()
+                    Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+                    If rowsAffected > 0 Then
+                        loadOrders()
+                        MessageBox.Show("Price is Set!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Pricing.Close()
+                        Delete_Orders(idStocks)
+
+                        Dim getLastInsertedIdQuery As String = "SELECT last_insert_rowid()"
+                        Using getLastIdCmd As New SQLiteCommand(getLastInsertedIdQuery, connection)
+                            Dim SalesId As Integer = Convert.ToInt32(getLastIdCmd.ExecuteScalar())
+
+                            ' Insert into Items_Used table
+                            Dim insertItemsUsedQuery As String = "UPDATE Items_Used SET Sales_Id = '" & SalesId & "' WHERE Orders_Id = '" & id & "'"
+                            Using insertItemsUsedCmd As New SQLiteCommand(insertItemsUsedQuery, connection)
+                                insertItemsUsedCmd.ExecuteNonQuery()
+                            End Using
+                            Stock_Out(SalesId)
+                            connection.Close()
+                            AddOrder.Close()
+                        End Using
+
+                    Else
+                        MessageBox.Show("Error!.")
+                    End If
                 End Using
             End Using
         Catch ex As Exception
@@ -236,47 +275,16 @@ Module InventoryModule
         End Try
     End Sub
 
-    Public Sub Stock_Out(ByVal id As Integer)
-        Dim usedQuantity As Integer
+    Public Sub Stock_Out(ByVal SalesId As Integer)
         Using connection As New SQLiteConnection(DBConnectionString)
             connection.Open()
-
-            Dim query As String = "SELECT Quantity FROM Items_Used WHERE Orders_Id = '" & id & "'  "
+            Dim query As String = "UPDATE Stocks SET Stocks_Quantity = Stocks_Quantity - (SELECT SUM(Quantity) FROM Items_Used WHERE Items_Used.Sales_Id = '" & SalesId & "' )"
             Using cmd As New SQLiteCommand(query, connection)
-                Dim dr As SQLiteDataReader
-                dr = cmd.ExecuteReader
-                If dr.Read Then
-                    usedQuantity = dr(0).ToString
-                    StockOut_Calculations(usedQuantity)
-                    dr.Close()
-                    connection.Close()
-                Else
-                    MsgBox("No Data Found!!")
-                End If
-
+                cmd.ExecuteReader()
+                loadStocks()
+                connection.Close()
             End Using
         End Using
-    End Sub
-
-    Public Sub StockOut_Calculations(ByVal usedQuantity As Integer)
-        'Using connection As New SQLiteConnection(DBConnectionString)
-        '    connection.Open()
-        MsgBox(usedQuantity)
-        '    Dim query As String = "SELECT Quantity FROM Items_Used WHERE Orders_Id = '" & id & "'  "
-        '    Using cmd As New SQLiteCommand(query, connection)
-        '        Dim dr As SQLiteDataReader
-        '        dr = cmd.ExecuteReader
-        '        If dr.Read Then
-        '            usedQuantity = dr(0).ToString
-        '            MsgBox(usedQuantity)
-        '            dr.Close()
-        '            connection.Close()
-        '        Else
-        '            MsgBox("No Data Found!!")
-        '        End If
-
-        '    End Using
-        'End Using
     End Sub
 
 End Module

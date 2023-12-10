@@ -69,9 +69,6 @@ GROUP BY valMonth;
         End Using
     End Sub
 
-
-
-
     Public Sub Load_WeeklySales()
         Dim valTotalWeek As Decimal
         Dim valTotalWeekFormatted As String
@@ -106,10 +103,6 @@ WHERE Sales_OrderDate >= DATE('now', 'weekday 0', '-6 days')
         End Using
     End Sub
 
-
-
-
-
     Public Sub Load_AnnuallySales()
         Using connection As New SQLiteConnection(DBConnectionString)
             connection.Open()
@@ -133,22 +126,10 @@ GROUP BY valYear;"
                     connection.Close()
 
                 Else
-                    ' if no value for the current Annually
                     Sales.lblAnnuallySales.Text = "0"
                     Dashboard.lblAnnually.Text = "0"
                 End If
             End Using
         End Using
     End Sub
-
-
-
-
-
-
-
-
-
-
-
 End Module

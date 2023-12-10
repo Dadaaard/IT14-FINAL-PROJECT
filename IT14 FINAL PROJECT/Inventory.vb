@@ -25,18 +25,21 @@ Public Class Inventory
         loadOrders()
         loadStocks()
 
-
-        'For Each row As DataGridViewRow In dgvStocks.Rows
-        '    If Not row.IsNewRow Then
-        '        AddOrder.RadioButton1.Text = row.Cells(1).Value.ToString
-        '        MessageBox.Show(row.Cells(1).Value.ToString)
-        '    End If
-        'Next
+        dgOrderList.ClearSelection()
+        dgvStocks.ClearSelection()
 
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        UpdateOrder.Show()
+
+
+        If dgOrderList.SelectedCells.Count = 0 Then
+            MessageBox.Show("Please select a cell to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            ' If a cell is selected, proceed to show ViewOrders form
+            UpdateOrder.Show()
+            dgOrderList.ClearSelection()
+        End If
 
     End Sub
     Private Sub dgOrderList_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgOrderList.CellContentClick
@@ -66,26 +69,41 @@ Public Class Inventory
         End If
     End Sub
 
-
-
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        ViewOrders.Show()
-
+        If dgOrderList.SelectedCells.Count = 0 Then
+            MessageBox.Show("Please select a cell.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            ViewOrders.Show()
+            dgOrderList.ClearSelection()
+        End If
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Pricing.Show()
+
+        If dgOrderList.SelectedCells.Count = 0 Then
+            MessageBox.Show("Please Select Order to Complete .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Pricing.Show()
+            dgOrderList.ClearSelection()
+        End If
 
     End Sub
 
     Private Sub btnAddStocks_Click(sender As Object, e As EventArgs) Handles btnAddStocks.Click
+
         AddStocks.Show()
 
     End Sub
 
-
     Private Sub btnDeleteStocks_Click(sender As Object, e As EventArgs) Handles btnDeleteStocks.Click
-        Delete_Stocks(idStocks)
+
+
+        If dgvStocks.SelectedCells.Count = 0 Then
+            MessageBox.Show("Please Select Stocks to Delete .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Delete_Stocks(idStocks)
+            dgOrderList.ClearSelection()
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -95,8 +113,13 @@ Public Class Inventory
     End Sub
 
     Private Sub btnViewStocks_Click(sender As Object, e As EventArgs) Handles btnViewStocks.Click
-        ViewStocks.Show()
 
+        If dgvStocks.SelectedCells.Count = 0 Then
+            MessageBox.Show("Please select a cell to view.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            ViewStocks.Show()
+            dgOrderList.ClearSelection()
+        End If
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -113,31 +136,22 @@ Public Class Inventory
 
     Private Sub btnDeleteOrders_Click(sender As Object, e As EventArgs) Handles btnDeleteOrders.Click
 
-        Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this order?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If result = DialogResult.Yes Then
-            Delete_Orders(idOrders)
-            MessageBox.Show("Order deleted successfully.")
+        If dgOrderList.SelectedCells.Count = 0 Then
+            MessageBox.Show("Please Select Orders to Delete .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-
+            Delete_Orders(idOrders)
         End If
-    End Sub
 
+    End Sub
     Private Sub btnAccounts_Click(sender As Object, e As EventArgs) Handles btnAccounts.Click
         AccountDetails.Show()
 
     End Sub
-
     Private Sub btnHistory_Click(sender As Object, e As EventArgs) Handles btnHistory.Click
         StocksHistory.Show()
 
     End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Login.Show()
-        Me.Close()
+        Logout_Account()
     End Sub
 End Class

@@ -86,4 +86,11 @@ Module AccountModule
         End Using
     End Sub
 
+    Public Sub Logout_Account()
+        MsgBox("Account Logged Out!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Login.Show()
+        Sales.Close()
+        Inventory.Close()
+        Dashboard.Close()
+    End Sub
 End Module

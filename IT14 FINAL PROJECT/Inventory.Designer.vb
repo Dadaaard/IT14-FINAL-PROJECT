@@ -23,10 +23,11 @@ Partial Class Inventory
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnAccounts = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.btnAccounts = New System.Windows.Forms.Button()
         Me.dgOrderList = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -44,7 +45,6 @@ Partial Class Inventory
         Me.btnHistory = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dgOrderList, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvStocks, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,42 +65,19 @@ Partial Class Inventory
         Me.Panel1.Size = New System.Drawing.Size(300, 873)
         Me.Panel1.TabIndex = 14
         '
-        'btnAccounts
+        'Button4
         '
-        Me.btnAccounts.Location = New System.Drawing.Point(1529, 97)
-        Me.btnAccounts.Name = "btnAccounts"
-        Me.btnAccounts.Size = New System.Drawing.Size(181, 42)
-        Me.btnAccounts.TabIndex = 15
-        Me.btnAccounts.Text = "ACCOUNT"
-        Me.btnAccounts.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.Teal
-        Me.Button7.FlatAppearance.BorderSize = 0
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Tw Cen MT", 12.0!)
-        Me.Button7.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Button7.Location = New System.Drawing.Point(12, 492)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(277, 55)
-        Me.Button7.TabIndex = 9
-        Me.Button7.Text = "SALES"
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'Button6
-        '
-        Me.Button6.BackColor = System.Drawing.Color.Teal
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Tw Cen MT", 12.0!)
-        Me.Button6.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Button6.Location = New System.Drawing.Point(12, 418)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(277, 55)
-        Me.Button6.TabIndex = 8
-        Me.Button6.Text = "INVENTORY"
-        Me.Button6.UseVisualStyleBackColor = False
+        Me.Button4.BackColor = System.Drawing.Color.Teal
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Tw Cen MT", 12.0!)
+        Me.Button4.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Button4.Location = New System.Drawing.Point(12, 707)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(277, 55)
+        Me.Button4.TabIndex = 34
+        Me.Button4.Text = "LOGOUT"
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Button1
         '
@@ -116,6 +93,43 @@ Partial Class Inventory
         Me.Button1.Text = "HOME"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'Button6
+        '
+        Me.Button6.BackColor = System.Drawing.Color.Teal
+        Me.Button6.FlatAppearance.BorderSize = 0
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Font = New System.Drawing.Font("Tw Cen MT", 12.0!)
+        Me.Button6.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Button6.Location = New System.Drawing.Point(12, 418)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(277, 55)
+        Me.Button6.TabIndex = 8
+        Me.Button6.Text = "INVENTORY"
+        Me.Button6.UseVisualStyleBackColor = False
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.Color.Teal
+        Me.Button7.FlatAppearance.BorderSize = 0
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button7.Font = New System.Drawing.Font("Tw Cen MT", 12.0!)
+        Me.Button7.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Button7.Location = New System.Drawing.Point(12, 492)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(277, 55)
+        Me.Button7.TabIndex = 9
+        Me.Button7.Text = "SALES"
+        Me.Button7.UseVisualStyleBackColor = False
+        '
+        'btnAccounts
+        '
+        Me.btnAccounts.Location = New System.Drawing.Point(1529, 97)
+        Me.btnAccounts.Name = "btnAccounts"
+        Me.btnAccounts.Size = New System.Drawing.Size(181, 42)
+        Me.btnAccounts.TabIndex = 15
+        Me.btnAccounts.Text = "ACCOUNT"
+        Me.btnAccounts.UseVisualStyleBackColor = True
+        '
         'dgOrderList
         '
         Me.dgOrderList.AllowUserToAddRows = False
@@ -127,6 +141,7 @@ Partial Class Inventory
         Me.dgOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgOrderList.EnableHeadersVisualStyles = False
         Me.dgOrderList.Location = New System.Drawing.Point(346, 303)
+        Me.dgOrderList.MultiSelect = False
         Me.dgOrderList.Name = "dgOrderList"
         Me.dgOrderList.ReadOnly = True
         Me.dgOrderList.RowHeadersVisible = False
@@ -217,6 +232,7 @@ Partial Class Inventory
         Me.dgvStocks.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.dgvStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvStocks.Location = New System.Drawing.Point(1169, 303)
+        Me.dgvStocks.MultiSelect = False
         Me.dgvStocks.Name = "dgvStocks"
         Me.dgvStocks.ReadOnly = True
         Me.dgvStocks.RowHeadersVisible = False
@@ -332,20 +348,6 @@ Partial Class Inventory
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(794, 558)
         Me.Panel2.TabIndex = 33
-        '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.Color.Teal
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Tw Cen MT", 12.0!)
-        Me.Button4.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Button4.Location = New System.Drawing.Point(12, 707)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(277, 55)
-        Me.Button4.TabIndex = 34
-        Me.Button4.Text = "LOGOUT"
-        Me.Button4.UseVisualStyleBackColor = False
         '
         'Inventory
         '

@@ -48,8 +48,8 @@ Partial Class Dashboard
         Me.lblCompletedOrders = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel9.SuspendLayout()
@@ -341,18 +341,6 @@ Partial Class Dashboard
         Me.Panel13.Size = New System.Drawing.Size(300, 873)
         Me.Panel13.TabIndex = 16
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Verdana", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Label7.Location = New System.Drawing.Point(746, 68)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(552, 86)
-        Me.Label7.TabIndex = 17
-        Me.Label7.Text = "DASHBOARD"
-        '
         'Button4
         '
         Me.Button4.BackColor = System.Drawing.Color.Teal
@@ -366,6 +354,18 @@ Partial Class Dashboard
         Me.Button4.TabIndex = 35
         Me.Button4.Text = "LOGOUT"
         Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Verdana", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Label7.Location = New System.Drawing.Point(746, 68)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(552, 86)
+        Me.Label7.TabIndex = 17
+        Me.Label7.Text = "DASHBOARD"
         '
         'Dashboard
         '

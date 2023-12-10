@@ -30,7 +30,7 @@ Module StocksModule
                         MessageBox.Show("Stocks added successfully.")
                         connection.Close()
                         loadStocks()
-
+                        Inventory.dgvStocks.ClearSelection()
                         AddStocks.Close()
 
                     Else
@@ -60,6 +60,7 @@ Module StocksModule
             da.Fill(ds, "Stocks")
 
             Inventory.dgvStocks.DataSource = ds.Tables(0)
+            Inventory.dgvStocks.ClearSelection()
             con.Close()
 
         Catch ex As SQLiteException
@@ -96,6 +97,7 @@ Module StocksModule
                 MsgBox("Stocks Successfully Updated!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 connection.Close()
                 loadStocks()
+
                 UpdateOrder.Close()
 
             End Using
@@ -123,6 +125,7 @@ Module StocksModule
                 Inventory.btnUpdateQuantity.Visible = False
                 connection.Close()
                 loadStocks()
+
                 UpdateOrder.Close()
 
             End Using
@@ -146,10 +149,11 @@ Module StocksModule
                     MessageBox.Show("Successfully Deleted!")
                     connection.Close()
                     loadStocks()
+
                 End Using
             End Using
         Else
-
+            Inventory.dgvStocks.ClearSelection()
         End If
     End Sub
 
