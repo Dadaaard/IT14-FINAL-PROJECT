@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AddStocks
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AddStocks
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DateTimePickerStocks = New System.Windows.Forms.DateTimePicker()
         Me.btnAddStocks = New System.Windows.Forms.Button()
@@ -34,13 +34,16 @@ Partial Class AddStocks
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DateTimePickerStocks
         '
-        Me.DateTimePickerStocks.Location = New System.Drawing.Point(204, 328)
-        Me.DateTimePickerStocks.MaxDate = New Date(2023, 11, 26, 0, 0, 0, 0)
+        Me.DateTimePickerStocks.CustomFormat = "yyyy-MM-dd"
+        Me.DateTimePickerStocks.Location = New System.Drawing.Point(204, 355)
+        Me.DateTimePickerStocks.MaxDate = New Date(9998, 11, 26, 0, 0, 0, 0)
         Me.DateTimePickerStocks.Name = "DateTimePickerStocks"
         Me.DateTimePickerStocks.Size = New System.Drawing.Size(269, 26)
         Me.DateTimePickerStocks.TabIndex = 20
@@ -62,7 +65,7 @@ Partial Class AddStocks
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(29, 328)
+        Me.Label5.Location = New System.Drawing.Point(29, 355)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(152, 26)
         Me.Label5.TabIndex = 18
@@ -72,7 +75,7 @@ Partial Class AddStocks
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(26, 283)
+        Me.Label4.Location = New System.Drawing.Point(26, 268)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(155, 26)
         Me.Label4.TabIndex = 17
@@ -82,7 +85,7 @@ Partial Class AddStocks
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(90, 234)
+        Me.Label3.Location = New System.Drawing.Point(90, 219)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(91, 26)
         Me.Label3.TabIndex = 16
@@ -92,7 +95,7 @@ Partial Class AddStocks
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(69, 190)
+        Me.Label2.Location = New System.Drawing.Point(69, 175)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(112, 26)
         Me.Label2.TabIndex = 15
@@ -100,21 +103,21 @@ Partial Class AddStocks
         '
         'txtPriceStocks
         '
-        Me.txtPriceStocks.Location = New System.Drawing.Point(204, 283)
+        Me.txtPriceStocks.Location = New System.Drawing.Point(204, 268)
         Me.txtPriceStocks.Name = "txtPriceStocks"
         Me.txtPriceStocks.Size = New System.Drawing.Size(269, 26)
         Me.txtPriceStocks.TabIndex = 14
         '
         'txtQuantityStocks
         '
-        Me.txtQuantityStocks.Location = New System.Drawing.Point(204, 235)
+        Me.txtQuantityStocks.Location = New System.Drawing.Point(204, 220)
         Me.txtQuantityStocks.Name = "txtQuantityStocks"
         Me.txtQuantityStocks.Size = New System.Drawing.Size(269, 26)
         Me.txtQuantityStocks.TabIndex = 13
         '
         'txtItemNameStocks
         '
-        Me.txtItemNameStocks.Location = New System.Drawing.Point(204, 191)
+        Me.txtItemNameStocks.Location = New System.Drawing.Point(204, 176)
         Me.txtItemNameStocks.Name = "txtItemNameStocks"
         Me.txtItemNameStocks.Size = New System.Drawing.Size(269, 26)
         Me.txtItemNameStocks.TabIndex = 12
@@ -153,6 +156,26 @@ Partial Class AddStocks
         Me.Label6.TabIndex = 16
         Me.Label6.Text = "Add Stock"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(40, 311)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(141, 26)
+        Me.Label1.TabIndex = 41
+        Me.Label1.Text = "Price per item"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(264, 311)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(57, 26)
+        Me.Label7.TabIndex = 42
+        Me.Label7.Text = "Price"
+        '
         'AddStocks
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -160,6 +183,8 @@ Partial Class AddStocks
         Me.BackColor = System.Drawing.Color.LightBlue
         Me.ClientSize = New System.Drawing.Size(496, 472)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DateTimePickerStocks)
@@ -193,4 +218,6 @@ Partial Class AddStocks
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label6 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label7 As Label
 End Class

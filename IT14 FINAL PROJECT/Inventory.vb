@@ -138,7 +138,13 @@ Public Class Inventory
         If dgOrderList.SelectedCells.Count = 0 Then
             MessageBox.Show("Please Select Orders to Delete .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            Delete_Orders(idOrders)
+            Dim result As DialogResult = MessageBox.Show("Are you sure you want To delete this Order?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            If result = DialogResult.Yes Then
+                Delete_Orders(idOrders)
+                MessageBox.Show("Order Successfully Deleted", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+
+            End If
         End If
 
     End Sub

@@ -169,9 +169,11 @@ Module StocksModule
                 Dim dr As SQLiteDataReader
                 dr = cmd.ExecuteReader
                 If dr.Read Then
+                    Dim converted As Decimal = Convert.ToDecimal(dr(2).ToString)
+                    Dim valPesoFormatted As String = converted.ToString("C")
                     ViewStocks.lblItemNameStocks.Text = dr(0).ToString()
                     ViewStocks.lblQuantityStocks.Text = dr(1).ToString()
-                    ViewStocks.lblPriceStocks.Text = dr(2).ToString()
+                    ViewStocks.lblPriceStocks.Text = valPesoFormatted
                     ViewStocks.lblDatePurchasedStocks.Text = dr(3).ToString()
 
                     dr.Close()

@@ -11,7 +11,7 @@
 
         itemname = txtItemNameStocks.Text
         quantity = txtQuantityStocks.Text
-        datepurchased = DateTimePickerStocks.value
+        datepurchased = DateTimePickerStocks.Text
         price = txtPriceStocks.Text
         Dim StockIn As Date = System.DateTime.Now.ToString("MM/MM/yyyy HH:mm:ss")
         Dim StockOut As String = ""

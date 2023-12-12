@@ -141,24 +141,22 @@ Module InventoryModule
         '    End Using
         'End Using
 
-        Dim result As DialogResult = MessageBox.Show("Are you sure you want To delete this Order?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        'Dim result As DialogResult = MessageBox.Show("Are you sure you want To delete this Order?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
-        If result = DialogResult.Yes Then
-            Using connection As New SQLiteConnection(DBConnectionString)
+        'If result = DialogResult.Yes Then
+        Using connection As New SQLiteConnection(DBConnectionString)
                 connection.Open()
 
                 Dim query As String = "DELETE from Orders WHERE Orders_Id =  '" & idOrders & "' "
                 Using cmd As New SQLiteCommand(query, connection)
                     cmd.ExecuteNonQuery()
-                    connection.Close()
-                    MessageBox.Show("Successfully Deleted!")
-                    connection.Close()
-                    loadOrders()
+                connection.Close()
+                loadOrders()
                 End Using
             End Using
-        Else
-            Inventory.dgOrderList.ClearSelection()
-        End If
+        'Else
+        '    Inventory.dgOrderList.ClearSelection()
+        'End If
 
 
     End Sub

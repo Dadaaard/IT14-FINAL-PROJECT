@@ -57,7 +57,6 @@ Partial Class AddOrder
         '
         Me.datetime.CustomFormat = "yyyy-MM-dd"
         Me.datetime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datetime.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.datetime.Location = New System.Drawing.Point(233, 279)
         Me.datetime.Name = "datetime"
         Me.datetime.Size = New System.Drawing.Size(370, 30)

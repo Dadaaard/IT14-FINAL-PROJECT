@@ -7,5 +7,4 @@
     Private Sub ViewStocks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         View_Stocks()
     End Sub
-
 End Class
