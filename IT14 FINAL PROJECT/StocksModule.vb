@@ -13,17 +13,19 @@ Module StocksModule
 
     'Add
 
-    Public Sub Add_Stocks(ByVal itemname As String, ByVal quantity As Integer, ByVal datepurchased As String, ByVal price As Integer)
+    Public Sub Add_Stocks(ByVal itemname As String, ByVal quantity As Integer, ByVal datepurchased As String, ByVal price As Integer, ByVal StockIn As Date, ByVal StockOut As String)
         Try
             Using connection As New SQLiteConnection(DBConnectionString)
                 connection.Open()
 
-                Dim query As String = "INSERT INTO Stocks (Stocks_ItemName,Stocks_Quantity,Stocks_Price,Stocks_DatePurchased) VALUES (@ItemName, @Quantity,@Price,@DatePurchased)"
+                Dim query As String = "INSERT INTO Stocks (Stocks_ItemName,Stocks_Quantity,Stocks_Price,Stocks_DatePurchased,Stocks_In,Stocks_Out) VALUES (@ItemName, @Quantity,@Price,@DatePurchased,@StocksIn,@StocksOut)"
                 Using cmd As New SQLiteCommand(query, connection)
                     cmd.Parameters.AddWithValue("@ItemName", itemname)
                     cmd.Parameters.AddWithValue("@Quantity", quantity)
                     cmd.Parameters.AddWithValue("@Price", price)
                     cmd.Parameters.AddWithValue("@DatePurchased", datepurchased)
+                    cmd.Parameters.AddWithValue("@StocksIn", StockIn)
+                    cmd.Parameters.AddWithValue("@StocksOut", StockOut)
 
                     Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
                     If rowsAffected > 0 Then
@@ -184,10 +186,6 @@ Module StocksModule
 
     Public Sub Stocks_History()
 
-        Dim currentTime As Date = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
-
-
-        MsgBox(currentTime)
 
     End Sub
 
