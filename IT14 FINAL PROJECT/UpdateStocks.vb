@@ -4,9 +4,11 @@
 
     Dim idStocks, quantityStocks, priceStocks As Integer
 
-    Private Sub UpdateStocks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Hide()
+        Inventory.dgvStocks.ClearSelection()
     End Sub
+
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
 
@@ -17,7 +19,6 @@
         datepurchasedStocks = dtpUpdateStocks.Value
         quantityStocks = txtUpdateQuantityStocks.Text
         priceStocks = txtUpdatePrice.Text
-
         Update_Stocks(itemnameStocks, datepurchasedStocks, quantityStocks, priceStocks, idStocks)
 
     End Sub

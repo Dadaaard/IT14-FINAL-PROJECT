@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Dashboard
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class Dashboard
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         Me.btnAccounts = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -48,8 +49,12 @@ Partial Class Dashboard
         Me.lblCompletedOrders = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel9.SuspendLayout()
@@ -61,59 +66,80 @@ Partial Class Dashboard
         '
         'btnAccounts
         '
-        Me.btnAccounts.Location = New System.Drawing.Point(1532, 96)
+        Me.btnAccounts.BackColor = System.Drawing.Color.Transparent
+        Me.btnAccounts.FlatAppearance.BorderSize = 0
+        Me.btnAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAccounts.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAccounts.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.btnAccounts.Image = CType(resources.GetObject("btnAccounts.Image"), System.Drawing.Image)
+        Me.btnAccounts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAccounts.Location = New System.Drawing.Point(1462, 82)
         Me.btnAccounts.Margin = New System.Windows.Forms.Padding(3, 3, 10, 3)
         Me.btnAccounts.Name = "btnAccounts"
-        Me.btnAccounts.Size = New System.Drawing.Size(181, 42)
+        Me.btnAccounts.Size = New System.Drawing.Size(228, 72)
         Me.btnAccounts.TabIndex = 16
-        Me.btnAccounts.Text = "ACCOUNT"
-        Me.btnAccounts.UseVisualStyleBackColor = True
+        Me.btnAccounts.Text = "   My Account"
+        Me.btnAccounts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAccounts.UseVisualStyleBackColor = False
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.Teal
+        Me.Button3.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button3.Location = New System.Drawing.Point(12, 492)
         Me.Button3.Name = "Button3"
+        Me.Button3.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.Button3.Size = New System.Drawing.Size(277, 55)
         Me.Button3.TabIndex = 8
-        Me.Button3.Text = "SALES"
+        Me.Button3.Text = "          SALES"
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button3.UseVisualStyleBackColor = False
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.Teal
+        Me.Button2.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.Location = New System.Drawing.Point(12, 418)
         Me.Button2.Name = "Button2"
+        Me.Button2.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.Button2.Size = New System.Drawing.Size(277, 55)
         Me.Button2.TabIndex = 7
-        Me.Button2.Text = "INVENTORY"
+        Me.Button2.Text = "      INVENTORY"
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = False
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.Teal
+        Me.Button1.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.Location = New System.Drawing.Point(12, 342)
         Me.Button1.Name = "Button1"
+        Me.Button1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.Button1.Size = New System.Drawing.Size(277, 55)
         Me.Button1.TabIndex = 6
-        Me.Button1.Text = "HOME"
+        Me.Button1.Text = "          HOME"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel5.Controls.Add(Me.lblPendingOrders)
         Me.Panel5.Controls.Add(Me.Label1)
         Me.Panel5.Controls.Add(Me.Panel6)
@@ -155,6 +181,7 @@ Partial Class Dashboard
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.lblOverallStocks)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Panel4)
@@ -204,6 +231,7 @@ Partial Class Dashboard
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel9.Controls.Add(Me.lblAnnually)
         Me.Panel9.Controls.Add(Me.Label4)
         Me.Panel9.Location = New System.Drawing.Point(1267, 551)
@@ -216,7 +244,7 @@ Partial Class Dashboard
         Me.lblAnnually.AutoSize = True
         Me.lblAnnually.Font = New System.Drawing.Font("Tw Cen MT", 22.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAnnually.ForeColor = System.Drawing.Color.PaleGreen
-        Me.lblAnnually.Location = New System.Drawing.Point(51, 147)
+        Me.lblAnnually.Location = New System.Drawing.Point(3, 147)
         Me.lblAnnually.Name = "lblAnnually"
         Me.lblAnnually.Size = New System.Drawing.Size(140, 50)
         Me.lblAnnually.TabIndex = 18
@@ -236,6 +264,7 @@ Partial Class Dashboard
         'Panel8
         '
         Me.Panel8.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel8.Controls.Add(Me.lblMonthly)
         Me.Panel8.Controls.Add(Me.Label5)
         Me.Panel8.Location = New System.Drawing.Point(832, 551)
@@ -268,6 +297,7 @@ Partial Class Dashboard
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel7.Controls.Add(Me.lblWeekly)
         Me.Panel7.Controls.Add(Me.Label6)
         Me.Panel7.Location = New System.Drawing.Point(399, 551)
@@ -300,6 +330,7 @@ Partial Class Dashboard
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.lblCompletedOrders)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Location = New System.Drawing.Point(1267, 236)
@@ -332,6 +363,9 @@ Partial Class Dashboard
         'Panel13
         '
         Me.Panel13.BackColor = System.Drawing.Color.DarkCyan
+        Me.Panel13.Controls.Add(Me.Label10)
+        Me.Panel13.Controls.Add(Me.Label9)
+        Me.Panel13.Controls.Add(Me.Label8)
         Me.Panel13.Controls.Add(Me.Button4)
         Me.Panel13.Controls.Add(Me.Button1)
         Me.Panel13.Controls.Add(Me.Button2)
@@ -341,18 +375,55 @@ Partial Class Dashboard
         Me.Panel13.Size = New System.Drawing.Size(300, 873)
         Me.Panel13.TabIndex = 16
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Gill Sans MT", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Label10.Location = New System.Drawing.Point(141, 119)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(111, 21)
+        Me.Label10.TabIndex = 38
+        Me.Label10.Text = "ADVERTISING"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Gill Sans MT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Label9.Location = New System.Drawing.Point(140, 95)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(91, 27)
+        Me.Label9.TabIndex = 37
+        Me.Label9.Text = "Digimark"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Gill Sans MT", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Label8.Location = New System.Drawing.Point(44, 83)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(109, 67)
+        Me.Label8.TabIndex = 36
+        Me.Label8.Text = "DM"
+        '
         'Button4
         '
-        Me.Button4.BackColor = System.Drawing.Color.Teal
+        Me.Button4.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Tw Cen MT", 12.0!)
         Me.Button4.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
+        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button4.Location = New System.Drawing.Point(12, 707)
         Me.Button4.Name = "Button4"
+        Me.Button4.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.Button4.Size = New System.Drawing.Size(277, 55)
         Me.Button4.TabIndex = 35
-        Me.Button4.Text = "LOGOUT"
+        Me.Button4.Text = "          LOGOUT"
+        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button4.UseVisualStyleBackColor = False
         '
         'Label7
@@ -367,6 +438,14 @@ Partial Class Dashboard
         Me.Label7.TabIndex = 17
         Me.Label7.Text = "DASHBOARD"
         '
+        'Panel10
+        '
+        Me.Panel10.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Panel10.Location = New System.Drawing.Point(300, 111)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(440, 10)
+        Me.Panel10.TabIndex = 35
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -374,6 +453,7 @@ Partial Class Dashboard
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.DarkSlateGray
         Me.ClientSize = New System.Drawing.Size(1809, 871)
+        Me.Controls.Add(Me.Panel10)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.btnAccounts)
         Me.Controls.Add(Me.Panel13)
@@ -401,6 +481,7 @@ Partial Class Dashboard
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel13.ResumeLayout(False)
+        Me.Panel13.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -433,4 +514,8 @@ Partial Class Dashboard
     Friend WithEvents Panel13 As Panel
     Friend WithEvents Label7 As Label
     Friend WithEvents Button4 As Button
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
 End Class

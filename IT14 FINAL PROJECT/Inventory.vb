@@ -47,7 +47,6 @@ Public Class Inventory
         idOrders = dgOrderList.CurrentRow.Cells(0).Value
     End Sub
 
-
     Private Sub dgvStocks_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStocks.CellContentClick
         indexCount = dgvStocks.CurrentCell.RowIndex
         idStocks = dgvStocks.CurrentRow.Cells(0).Value

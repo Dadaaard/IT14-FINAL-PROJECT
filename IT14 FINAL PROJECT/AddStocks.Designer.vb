@@ -31,104 +31,137 @@ Partial Class AddStocks
         Me.txtPriceStocks = New System.Windows.Forms.TextBox()
         Me.txtQuantityStocks = New System.Windows.Forms.TextBox()
         Me.txtItemNameStocks = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DateTimePickerStocks
         '
-        Me.DateTimePickerStocks.Location = New System.Drawing.Point(204, 257)
+        Me.DateTimePickerStocks.Location = New System.Drawing.Point(204, 328)
         Me.DateTimePickerStocks.MaxDate = New Date(2023, 11, 26, 0, 0, 0, 0)
         Me.DateTimePickerStocks.Name = "DateTimePickerStocks"
-        Me.DateTimePickerStocks.Size = New System.Drawing.Size(152, 26)
+        Me.DateTimePickerStocks.Size = New System.Drawing.Size(269, 26)
         Me.DateTimePickerStocks.TabIndex = 20
         Me.DateTimePickerStocks.Value = New Date(2023, 11, 26, 0, 0, 0, 0)
         '
         'btnAddStocks
         '
-        Me.btnAddStocks.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddStocks.Location = New System.Drawing.Point(102, 303)
+        Me.btnAddStocks.BackColor = System.Drawing.Color.DarkTurquoise
+        Me.btnAddStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddStocks.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddStocks.Location = New System.Drawing.Point(259, 399)
         Me.btnAddStocks.Name = "btnAddStocks"
-        Me.btnAddStocks.Size = New System.Drawing.Size(174, 49)
+        Me.btnAddStocks.Size = New System.Drawing.Size(187, 41)
         Me.btnAddStocks.TabIndex = 19
         Me.btnAddStocks.Text = "Add to Stocks"
-        Me.btnAddStocks.UseVisualStyleBackColor = True
+        Me.btnAddStocks.UseVisualStyleBackColor = False
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(35, 257)
+        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(29, 328)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(152, 25)
+        Me.Label5.Size = New System.Drawing.Size(152, 26)
         Me.Label5.TabIndex = 18
         Me.Label5.Text = "Date Purchased"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(35, 196)
+        Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(26, 283)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(56, 25)
+        Me.Label4.Size = New System.Drawing.Size(155, 26)
         Me.Label4.TabIndex = 17
-        Me.Label4.Text = "Price"
+        Me.Label4.Text = "Price Purchased"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(35, 140)
+        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(90, 234)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(85, 25)
+        Me.Label3.Size = New System.Drawing.Size(91, 26)
         Me.Label3.TabIndex = 16
         Me.Label3.Text = "Quantity"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(35, 90)
+        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(69, 190)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(106, 25)
+        Me.Label2.Size = New System.Drawing.Size(112, 26)
         Me.Label2.TabIndex = 15
         Me.Label2.Text = "Item Name"
         '
         'txtPriceStocks
         '
-        Me.txtPriceStocks.Location = New System.Drawing.Point(204, 190)
+        Me.txtPriceStocks.Location = New System.Drawing.Point(204, 283)
         Me.txtPriceStocks.Name = "txtPriceStocks"
-        Me.txtPriceStocks.Size = New System.Drawing.Size(152, 26)
+        Me.txtPriceStocks.Size = New System.Drawing.Size(269, 26)
         Me.txtPriceStocks.TabIndex = 14
         '
         'txtQuantityStocks
         '
-        Me.txtQuantityStocks.Location = New System.Drawing.Point(204, 134)
+        Me.txtQuantityStocks.Location = New System.Drawing.Point(204, 235)
         Me.txtQuantityStocks.Name = "txtQuantityStocks"
-        Me.txtQuantityStocks.Size = New System.Drawing.Size(152, 26)
+        Me.txtQuantityStocks.Size = New System.Drawing.Size(269, 26)
         Me.txtQuantityStocks.TabIndex = 13
         '
         'txtItemNameStocks
         '
-        Me.txtItemNameStocks.Location = New System.Drawing.Point(204, 84)
+        Me.txtItemNameStocks.Location = New System.Drawing.Point(204, 191)
         Me.txtItemNameStocks.Name = "txtItemNameStocks"
-        Me.txtItemNameStocks.Size = New System.Drawing.Size(152, 26)
+        Me.txtItemNameStocks.Size = New System.Drawing.Size(269, 26)
         Me.txtItemNameStocks.TabIndex = 12
         '
-        'Label1
+        'Button1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(86, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(190, 37)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Add Stocks"
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(54, 399)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(187, 41)
+        Me.Button1.TabIndex = 21
+        Me.Button1.Text = "Cancel"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(497, 122)
+        Me.Panel1.TabIndex = 40
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Tw Cen MT", 25.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Label6.Location = New System.Drawing.Point(14, 64)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(234, 58)
+        Me.Label6.TabIndex = 16
+        Me.Label6.Text = "Add Stock"
         '
         'AddStocks
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(390, 372)
+        Me.BackColor = System.Drawing.Color.LightBlue
+        Me.ClientSize = New System.Drawing.Size(496, 472)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DateTimePickerStocks)
         Me.Controls.Add(Me.btnAddStocks)
         Me.Controls.Add(Me.Label5)
@@ -138,9 +171,11 @@ Partial Class AddStocks
         Me.Controls.Add(Me.txtPriceStocks)
         Me.Controls.Add(Me.txtQuantityStocks)
         Me.Controls.Add(Me.txtItemNameStocks)
-        Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "AddStocks"
-        Me.Text = "AddStocks"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -155,5 +190,7 @@ Partial Class AddStocks
     Friend WithEvents txtPriceStocks As TextBox
     Friend WithEvents txtQuantityStocks As TextBox
     Friend WithEvents txtItemNameStocks As TextBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label6 As Label
 End Class

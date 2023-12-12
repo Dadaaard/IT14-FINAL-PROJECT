@@ -11,6 +11,7 @@
         DataGridView1.Rows.Add(preselectedItem, preetQuantity)
     End Sub
 
+
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
 
         If ComboBox1.SelectedItem IsNot Nothing Then
@@ -58,12 +59,18 @@
         Quantity = txtQuantity.Text
         Description = RichTextBox1.Text
 
-
-
         For Each row As DataGridViewRow In DataGridView1.Rows
             selectedItem = CStr(row.Cells(0).FormattedValue)
             setQuantity = CStr(row.Cells(1).FormattedValue)
         Next row
-        Add_Orders(CustomerName, CustomerNumber, OrderDate, OrderType, Quantity, Description, selectedItem, setQuantity)
+
+        If Description = "" Then
+            Description = "..."
+            Add_Orders(CustomerName, CustomerNumber, OrderDate, OrderType, Quantity, Description, selectedItem, setQuantity)
+        Else
+            Add_Orders(CustomerName, CustomerNumber, OrderDate, OrderType, Quantity, Description, selectedItem, setQuantity)
+
+        End If
+
     End Sub
 End Class

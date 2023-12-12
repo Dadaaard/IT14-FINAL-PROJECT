@@ -3,15 +3,17 @@
     Dim itemname, datepurchased As String
     Dim quantity, price As Integer
 
-    Private Sub AddStocks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
     End Sub
 
     Private Sub btnAddStocks_Click(sender As Object, e As EventArgs) Handles btnAddStocks.Click
 
         itemname = txtItemNameStocks.Text
         quantity = txtQuantityStocks.Text
-        datepurchased = DateTimePickerStocks.Text
+        datepurchased = DateTimePickerStocks.value
         price = txtPriceStocks.Text
 
 

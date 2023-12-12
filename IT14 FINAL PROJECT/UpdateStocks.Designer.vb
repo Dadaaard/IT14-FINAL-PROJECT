@@ -33,6 +33,7 @@ Partial Class UpdateStocks
         Me.txtUpdateQuantityStocks = New System.Windows.Forms.TextBox()
         Me.lblSt = New System.Windows.Forms.Label()
         Me.txtUpdateItemNameStocks = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'dtpUpdateStocks
@@ -126,11 +127,21 @@ Partial Class UpdateStocks
         Me.txtUpdateItemNameStocks.Size = New System.Drawing.Size(153, 26)
         Me.txtUpdateItemNameStocks.TabIndex = 12
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(74, 297)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(119, 37)
+        Me.Button1.TabIndex = 23
+        Me.Button1.Text = "Cancel"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'UpdateStocks
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(413, 373)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.dtpUpdateStocks)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.lblID)
@@ -160,4 +171,5 @@ Partial Class UpdateStocks
     Friend WithEvents txtUpdateQuantityStocks As TextBox
     Friend WithEvents lblSt As Label
     Friend WithEvents txtUpdateItemNameStocks As TextBox
+    Friend WithEvents Button1 As Button
 End Class
