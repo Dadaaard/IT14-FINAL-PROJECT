@@ -132,7 +132,7 @@
       <DependentUpon>Inventory.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InventoryModule.vb" />
+    <Compile Include="OrdersModule.vb" />
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -168,12 +168,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SalesModule.vb" />
-    <Compile Include="StocksHistory.Designer.vb">
-      <DependentUpon>StocksHistory.vb</DependentUpon>
-    </Compile>
-    <Compile Include="StocksHistory.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="StocksModule.vb" />
     <Compile Include="UpdateOrder.Designer.vb">
       <DependentUpon>UpdateOrder.vb</DependentUpon>
@@ -239,9 +233,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sales.resx">
       <DependentUpon>Sales.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StocksHistory.resx">
-      <DependentUpon>StocksHistory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateOrder.resx">
       <DependentUpon>UpdateOrder.vb</DependentUpon>

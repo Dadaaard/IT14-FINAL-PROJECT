@@ -27,7 +27,7 @@
             MsgBox("Please input password")
         Else
             Login_Account(username, password)
-            Me.Close()
+
         End If
 
 

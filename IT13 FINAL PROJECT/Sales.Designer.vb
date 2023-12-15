@@ -48,7 +48,6 @@ Partial Class Sales
         Me.lblWeeklySales = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
@@ -202,6 +201,8 @@ Partial Class Sales
         '
         Me.dgvSales.AllowUserToResizeColumns = False
         Me.dgvSales.AllowUserToResizeRows = False
+        Me.dgvSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvSales.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSales.Location = New System.Drawing.Point(376, 291)
         Me.dgvSales.Name = "dgvSales"
@@ -362,16 +363,6 @@ Partial Class Sales
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Weekly Income"
         '
-        'Button2
-        '
-        Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Button2.Location = New System.Drawing.Point(1080, 230)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(200, 48)
-        Me.Button2.TabIndex = 24
-        Me.Button2.Text = "Update Sales"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -408,7 +399,6 @@ Partial Class Sales
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.btnAccounts)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgvSales)
@@ -461,7 +451,6 @@ Partial Class Sales
     Friend WithEvents lblWeeklySales As Label
     Friend WithEvents lblAnnuallySales As Label
     Friend WithEvents btnAccounts As Button
-    Friend WithEvents Button2 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents Panel9 As Panel

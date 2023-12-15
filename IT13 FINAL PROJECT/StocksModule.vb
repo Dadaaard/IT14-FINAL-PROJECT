@@ -13,30 +13,29 @@ Module StocksModule
 
     'Add
 
-    Public Sub Add_Stocks(ByVal itemname As String, ByVal quantity As Integer, ByVal datepurchased As String, ByVal price As Integer, ByVal StockIn As Date, ByVal StockOut As String)
+    Public Sub Add_Stocks(ByVal itemname As String, ByVal quantity As Integer, ByVal datepurchased As String, ByVal price As Integer, ByVal TotalAmount As Integer)
         Try
             Using connection As New SQLiteConnection(DBConnectionString)
                 connection.Open()
 
-                Dim query As String = "INSERT INTO Stocks (Stocks_ItemName,Stocks_Quantity,Stocks_Price,Stocks_DatePurchased,Stocks_In,Stocks_Out) VALUES (@ItemName, @Quantity,@Price,@DatePurchased,@StocksIn,@StocksOut)"
+                Dim query As String = "INSERT INTO Stocks (Stocks_ItemName,Stocks_Quantity,Stocks_Price,Stocks_DatePurchased,Stocks_TotalAmount) VALUES (@ItemName, @Quantity,@Price,@DatePurchased,@TotalAmount)"
                 Using cmd As New SQLiteCommand(query, connection)
                     cmd.Parameters.AddWithValue("@ItemName", itemname)
                     cmd.Parameters.AddWithValue("@Quantity", quantity)
                     cmd.Parameters.AddWithValue("@Price", price)
                     cmd.Parameters.AddWithValue("@DatePurchased", datepurchased)
-                    cmd.Parameters.AddWithValue("@StocksIn", StockIn)
-                    cmd.Parameters.AddWithValue("@StocksOut", StockOut)
+                    cmd.Parameters.AddWithValue("@TotalAmount", TotalAmount)
 
                     Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
                     If rowsAffected > 0 Then
-                        MessageBox.Show("Stocks added successfully.")
+                        MessageBox.Show("Order Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         connection.Close()
                         loadStocks()
                         Inventory.dgvStocks.ClearSelection()
                         AddStocks.Close()
 
                     Else
-                        MessageBox.Show("Failed to add Stocks!.")
+                        MessageBox.Show("Failed to add Order!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
                 End Using
             End Using
@@ -79,11 +78,11 @@ Module StocksModule
     'Update
 
 
-    Public Sub Update_Stocks(ByVal itemnameStocks As String, ByVal datepurchasedStocks As String, ByVal quantityStocks As String, ByVal priceStocks As String, ByVal idStocks As String)
+    Public Sub Update_Stocks(ByVal itemnameStocks As String, ByVal datepurchasedStocks As String, ByVal quantityStocks As String, ByVal priceStocks As String, ByVal amountStocks As Integer, ByVal idStocks As String)
         Using connection As New SQLiteConnection(DBConnectionString)
             connection.Open()
 
-            Dim query As String = "UPDATE Stocks SET Stocks_ItemName = @ItemName, Stocks_Quantity = @Quantity, Stocks_Price = @Price, Stocks_DatePurchased = @DatePurchased WHERE Stocks_Id = '" & idStocks & "' "
+            Dim query As String = "UPDATE Stocks SET Stocks_ItemName = @ItemName, Stocks_Quantity = @Quantity, Stocks_Price = @Price, Stocks_DatePurchased = @DatePurchased, Stocks_TotalAmount = @TotalAmount WHERE Stocks_Id = '" & idStocks & "' "
             Using cmd As New SQLiteCommand(query, connection)
 
                 With cmd
@@ -91,6 +90,7 @@ Module StocksModule
                     .Parameters.AddWithValue("@Quantity", quantityStocks)
                     .Parameters.AddWithValue("@Price", priceStocks)
                     .Parameters.AddWithValue("@DatePurchased", datepurchasedStocks)
+                    .Parameters.AddWithValue("@TotalAmount", amountStocks)
                     .ExecuteNonQuery()
                     UpdateStocks.Close()
 
@@ -148,7 +148,7 @@ Module StocksModule
                 Using cmd As New SQLiteCommand(query, connection)
                     cmd.ExecuteNonQuery()
                     connection.Close()
-                    MessageBox.Show("Successfully Deleted!")
+                    MessageBox.Show("Successfully Deleted!", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     connection.Close()
                     loadStocks()
 
@@ -164,7 +164,7 @@ Module StocksModule
         Using connection As New SQLiteConnection(DBConnectionString)
             connection.Open()
 
-            Dim query As String = "SELECT Stocks_ItemName, Stocks_Quantity, Stocks_Price, Stocks_DatePurchased FROM Stocks WHERE Stocks_Id = '" & idStocks & "'  "
+            Dim query As String = "SELECT Stocks_ItemName, Stocks_Quantity, Stocks_Price, Stocks_DatePurchased, Stocks_TotalAmount FROM Stocks WHERE Stocks_Id = '" & idStocks & "'  "
             Using cmd As New SQLiteCommand(query, connection)
                 Dim dr As SQLiteDataReader
                 dr = cmd.ExecuteReader
@@ -176,22 +176,17 @@ Module StocksModule
                     ViewStocks.lblPriceStocks.Text = valPesoFormatted
                     ViewStocks.lblDatePurchasedStocks.Text = dr(3).ToString()
 
+                    Dim convertPhp As Decimal = Convert.ToDecimal(dr(4).ToString)
+                    Dim valPesoFormattedAmount As String = convertPhp.ToString("C")
+                    ViewStocks.lblTotalAmount.Text = valPesoFormattedAmount
+
                     dr.Close()
                     connection.Close()
 
                 Else
-                    MsgBox("No Data Found!!")
+                    MessageBox.Show("No Data Found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             End Using
         End Using
     End Sub
-
-    Public Sub Stocks_History()
-
-
-    End Sub
-
-
-
-
 End Module

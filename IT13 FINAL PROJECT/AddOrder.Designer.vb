@@ -57,7 +57,8 @@ Partial Class AddOrder
         '
         Me.datetime.CustomFormat = "yyyy-MM-dd"
         Me.datetime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datetime.Location = New System.Drawing.Point(233, 279)
+        Me.datetime.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.datetime.Location = New System.Drawing.Point(244, 258)
         Me.datetime.Name = "datetime"
         Me.datetime.Size = New System.Drawing.Size(370, 30)
         Me.datetime.TabIndex = 30
@@ -67,7 +68,7 @@ Partial Class AddOrder
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(92, 713)
+        Me.Label7.Location = New System.Drawing.Point(104, 684)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(121, 26)
         Me.Label7.TabIndex = 29
@@ -77,7 +78,7 @@ Partial Class AddOrder
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(123, 373)
+        Me.Label6.Location = New System.Drawing.Point(134, 352)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(91, 26)
         Me.Label6.TabIndex = 28
@@ -87,7 +88,7 @@ Partial Class AddOrder
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(103, 325)
+        Me.Label5.Location = New System.Drawing.Point(114, 304)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(111, 26)
         Me.Label5.TabIndex = 27
@@ -97,7 +98,7 @@ Partial Class AddOrder
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(103, 279)
+        Me.Label4.Location = New System.Drawing.Point(114, 258)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(111, 26)
         Me.Label4.TabIndex = 26
@@ -107,7 +108,7 @@ Partial Class AddOrder
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(39, 237)
+        Me.Label3.Location = New System.Drawing.Point(50, 216)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(175, 26)
         Me.Label3.TabIndex = 25
@@ -117,7 +118,7 @@ Partial Class AddOrder
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(58, 190)
+        Me.Label2.Location = New System.Drawing.Point(69, 169)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(156, 26)
         Me.Label2.TabIndex = 24
@@ -129,7 +130,7 @@ Partial Class AddOrder
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(93, 883)
+        Me.Button1.Location = New System.Drawing.Point(103, 865)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(203, 41)
         Me.Button1.TabIndex = 23
@@ -141,7 +142,7 @@ Partial Class AddOrder
         Me.btnAddOrder.BackColor = System.Drawing.Color.DarkTurquoise
         Me.btnAddOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddOrder.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddOrder.Location = New System.Drawing.Point(363, 883)
+        Me.btnAddOrder.Location = New System.Drawing.Point(344, 865)
         Me.btnAddOrder.Name = "btnAddOrder"
         Me.btnAddOrder.Size = New System.Drawing.Size(203, 41)
         Me.btnAddOrder.TabIndex = 22
@@ -152,7 +153,7 @@ Partial Class AddOrder
         '
         Me.txtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtQuantity.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtQuantity.Location = New System.Drawing.Point(233, 373)
+        Me.txtQuantity.Location = New System.Drawing.Point(244, 352)
         Me.txtQuantity.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.txtQuantity.Name = "txtQuantity"
         Me.txtQuantity.Size = New System.Drawing.Size(370, 30)
@@ -162,7 +163,7 @@ Partial Class AddOrder
         '
         Me.txtOrderType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtOrderType.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtOrderType.Location = New System.Drawing.Point(233, 325)
+        Me.txtOrderType.Location = New System.Drawing.Point(244, 304)
         Me.txtOrderType.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.txtOrderType.Name = "txtOrderType"
         Me.txtOrderType.Size = New System.Drawing.Size(370, 30)
@@ -172,7 +173,7 @@ Partial Class AddOrder
         '
         Me.txtCustomerNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCustomerNumber.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCustomerNumber.Location = New System.Drawing.Point(233, 233)
+        Me.txtCustomerNumber.Location = New System.Drawing.Point(244, 212)
         Me.txtCustomerNumber.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.txtCustomerNumber.Name = "txtCustomerNumber"
         Me.txtCustomerNumber.Size = New System.Drawing.Size(370, 30)
@@ -182,7 +183,7 @@ Partial Class AddOrder
         '
         Me.txtCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCustomerName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCustomerName.Location = New System.Drawing.Point(233, 188)
+        Me.txtCustomerName.Location = New System.Drawing.Point(244, 167)
         Me.txtCustomerName.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.txtCustomerName.Name = "txtCustomerName"
         Me.txtCustomerName.Size = New System.Drawing.Size(370, 30)
@@ -203,7 +204,7 @@ Partial Class AddOrder
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(233, 713)
+        Me.RichTextBox1.Location = New System.Drawing.Point(244, 685)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(370, 107)
         Me.RichTextBox1.TabIndex = 31
@@ -213,7 +214,7 @@ Partial Class AddOrder
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(96, 447)
+        Me.Label8.Location = New System.Drawing.Point(107, 426)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(118, 26)
         Me.Label8.TabIndex = 34
@@ -222,14 +223,14 @@ Partial Class AddOrder
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(24, 487)
+        Me.ComboBox1.Location = New System.Drawing.Point(244, 427)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(190, 28)
+        Me.ComboBox1.Size = New System.Drawing.Size(370, 28)
         Me.ComboBox1.TabIndex = 35
         '
         'NumericUpDown1
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(77, 521)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(354, 465)
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(137, 26)
         Me.NumericUpDown1.TabIndex = 36
@@ -239,10 +240,10 @@ Partial Class AddOrder
         '
         Me.Button2.BackColor = System.Drawing.Color.PaleGreen
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Button2.Location = New System.Drawing.Point(77, 553)
+        Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(499, 461)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(137, 36)
+        Me.Button2.Size = New System.Drawing.Size(115, 37)
         Me.Button2.TabIndex = 37
         Me.Button2.Text = "ADD ITEM"
         Me.Button2.UseVisualStyleBackColor = False
@@ -251,16 +252,16 @@ Partial Class AddOrder
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToResizeColumns = False
         Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2})
-        Me.DataGridView1.Location = New System.Drawing.Point(233, 487)
+        Me.DataGridView1.Location = New System.Drawing.Point(244, 512)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(370, 196)
+        Me.DataGridView1.Size = New System.Drawing.Size(370, 140)
         Me.DataGridView1.TabIndex = 38
         '
         'Column1
@@ -269,7 +270,6 @@ Partial Class AddOrder
         Me.Column1.MinimumWidth = 8
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
-        Me.Column1.Width = 150
         '
         'Column2
         '
@@ -277,7 +277,6 @@ Partial Class AddOrder
         Me.Column2.MinimumWidth = 8
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
-        Me.Column2.Width = 150
         '
         'Panel1
         '
@@ -285,14 +284,14 @@ Partial Class AddOrder
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(675, 135)
+        Me.Panel1.Size = New System.Drawing.Size(745, 135)
         Me.Panel1.TabIndex = 39
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Trebuchet MS", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(110, 739)
+        Me.Label9.Location = New System.Drawing.Point(122, 710)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(71, 18)
         Me.Label9.TabIndex = 40
@@ -301,7 +300,7 @@ Partial Class AddOrder
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Black
-        Me.Panel2.Location = New System.Drawing.Point(29, 845)
+        Me.Panel2.Location = New System.Drawing.Point(24, 831)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(617, 3)
         Me.Panel2.TabIndex = 41
@@ -309,7 +308,7 @@ Partial Class AddOrder
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(317, 931)
+        Me.Label10.Location = New System.Drawing.Point(321, 913)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(13, 20)
         Me.Label10.TabIndex = 42
@@ -321,7 +320,7 @@ Partial Class AddOrder
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.LightBlue
-        Me.ClientSize = New System.Drawing.Size(673, 960)
+        Me.ClientSize = New System.Drawing.Size(677, 960)
         Me.ControlBox = False
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Panel2)

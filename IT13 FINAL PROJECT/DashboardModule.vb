@@ -33,28 +33,6 @@ Module DashboardModule
             End Using
         End Using
     End Sub
-
-    Public Sub Load_EverySales()
-        Using connection As New SQLiteConnection(DBConnectionString)
-            connection.Open()
-
-            Dim query As String = ""
-            Using cmd As New SQLiteCommand(query, connection)
-                Dim dr As SQLiteDataReader
-                dr = cmd.ExecuteReader
-                If dr.Read Then
-                    Dashboard.lblWeekly.Text = dr("order_count")
-                    Dashboard.lblMonthly.Text = dr("sales_count")
-                    Dashboard.lblAnnually.Text = dr("stock_count")
-                    dr.Close()
-                    connection.Close()
-
-
-                End If
-            End Using
-        End Using
-
-    End Sub
 End Module
 
 

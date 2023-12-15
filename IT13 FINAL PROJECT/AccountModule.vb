@@ -22,12 +22,12 @@ Module AccountModule
             Dim myread As SQLiteDataReader = cmd.ExecuteReader
             AccountDetails.lblUsername.Text = username
             If myread.Read Then
-                MsgBox("Logged In")
+                MessageBox.Show("Account Logged In!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Dashboard.Show()
                 myread.Close()
                 Login.Close()
             Else
-                MsgBox("The Password or Username is incorrect")
+                MessageBox.Show("The username or password is incorrect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
                 Login.txtUsername.Clear()
                 Login.txtPassword.Clear()
@@ -49,10 +49,10 @@ Module AccountModule
 
                     Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
                     If rowsAffected > 0 Then
-                        MessageBox.Show("Account Created Successfully.")
+                        MessageBox.Show("Account Created Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         connection.Close()
                     Else
-                        MessageBox.Show("Failed to Create Account.")
+                        MessageBox.Show("Failed to create!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
                 End Using
             End Using
@@ -73,8 +73,8 @@ Module AccountModule
                     .Parameters.AddWithValue("@password", confirmpassword)
                     .Parameters.AddWithValue("@oldpassword", currentPassword)
                     .ExecuteNonQuery()
-                    MsgBox("Saved!")
-                    MsgBox("Account logged out")
+                    MessageBox.Show("Saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Account Logged Out!", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Login.Show()
                     AccountDetails.Close()
                     Inventory.Close()
@@ -87,7 +87,7 @@ Module AccountModule
     End Sub
 
     Public Sub Logout_Account()
-        MsgBox("Account Logged Out!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("Account Logged Out!", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Login.Show()
         Sales.Close()
         Inventory.Close()

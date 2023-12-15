@@ -2,7 +2,7 @@
 Imports System.Data.SQLite
 Imports System.Windows.Forms.VisualStyles
 
-Module InventoryModule
+Module OrdersModule
     Public con As New SQLiteConnection
     Public cmd As New SQLiteCommand
     Public dr As SQLiteDataReader
@@ -73,7 +73,7 @@ Module InventoryModule
                     Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
 
                     If rowsAffected > 0 Then
-                        MessageBox.Show("Order added successfully.")
+                        MessageBox.Show("Order Added Successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         loadOrders()
 
                         ' Retrieve the last inserted Orders_Id
@@ -94,7 +94,7 @@ Module InventoryModule
                             AddOrder.Close()
                         End Using
                     Else
-                        MessageBox.Show("Failed to add order.")
+                        MessageBox.Show("Failed to add Order!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
                 End Using
             End Using
@@ -102,7 +102,6 @@ Module InventoryModule
             MessageBox.Show("Error: " & ex.Message)
         End Try
     End Sub
-
 
     Public Sub Update_Orders(ByVal updateCustomerNumber As Integer, ByVal updateOrderType As String, ByVal updateQuantity As Integer, ByVal updateDescription As String, ByVal mainID As Integer)
         Using connection As New SQLiteConnection(DBConnectionString)
@@ -145,15 +144,15 @@ Module InventoryModule
 
         'If result = DialogResult.Yes Then
         Using connection As New SQLiteConnection(DBConnectionString)
-                connection.Open()
+            connection.Open()
 
-                Dim query As String = "DELETE from Orders WHERE Orders_Id =  '" & idOrders & "' "
-                Using cmd As New SQLiteCommand(query, connection)
-                    cmd.ExecuteNonQuery()
+            Dim query As String = "DELETE from Orders WHERE Orders_Id =  '" & idOrders & "' "
+            Using cmd As New SQLiteCommand(query, connection)
+                cmd.ExecuteNonQuery()
                 connection.Close()
                 loadOrders()
-                End Using
             End Using
+        End Using
         'Else
         '    Inventory.dgOrderList.ClearSelection()
         'End If
@@ -208,14 +207,14 @@ Module InventoryModule
                             Dim quantity As Integer = dr(1).ToString()
                             ViewOrders.DataGridView1.Rows.Add(name, quantity)
                         Else
-                            MsgBox("No Items Used")
+                            MessageBox.Show("No items Used!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
 
                         dr.Close()
                     End Using
                 End Using
             Else
-                MsgBox("No selected row in the DataGridView.")
+                MessageBox.Show("No selected row in the DataGridView!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Catch ex As Exception
             MsgBox("Error: " & ex.Message)
@@ -239,7 +238,7 @@ Module InventoryModule
             Using connection As New SQLiteConnection(DBConnectionString)
                 connection.Open()
 
-                Dim query As String = "INSERT INTO Sales (Sales_ItemName,Sales_OrderDate,Sales_Quantity,Sales_SetPrice,Sales_TotalPrice,Items_Id,Orders_Id) VALUES ('" & itemname & "','" & orderdate & "','" & quantity & "', '" & setprice & "','" & totalprice & "',(SELECT Items_Id FROM Items_Used WHERE Orders_Id = '" & id & "' ),'" & id & "')"
+                Dim query As String = "INSERT INTO Sales (Sales_ItemName,Sales_OrderDate,Sales_Quantity,Sales_SetPrice, Sales_TotalPrice,Items_Id,Orders_Id) VALUES ('" & itemname & "','" & orderdate & "','" & quantity & "', '" & setprice & "','" & totalprice & "',(SELECT Items_Id FROM Items_Used WHERE Orders_Id = '" & id & "' ),'" & id & "')"
                 Using cmd As New SQLiteCommand(query, connection)
                     Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
 

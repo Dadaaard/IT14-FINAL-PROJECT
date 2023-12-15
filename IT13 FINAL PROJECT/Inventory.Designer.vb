@@ -46,7 +46,6 @@ Partial Class Inventory
         Me.Label2 = New System.Windows.Forms.Label()
         Me.numeric1 = New System.Windows.Forms.NumericUpDown()
         Me.btnUpdateQuantity = New System.Windows.Forms.Button()
-        Me.btnHistory = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -200,6 +199,7 @@ Partial Class Inventory
         Me.dgOrderList.AllowUserToDeleteRows = False
         Me.dgOrderList.AllowUserToResizeColumns = False
         Me.dgOrderList.AllowUserToResizeRows = False
+        Me.dgOrderList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgOrderList.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.dgOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgOrderList.EnableHeadersVisualStyles = False
@@ -233,9 +233,9 @@ Partial Class Inventory
         Me.Button5.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(518, 441)
+        Me.Button5.Location = New System.Drawing.Point(516, 437)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(217, 69)
+        Me.Button5.Size = New System.Drawing.Size(217, 79)
         Me.Button5.TabIndex = 21
         Me.Button5.Text = "  Complete Order"
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -301,9 +301,11 @@ Partial Class Inventory
         Me.dgvStocks.AllowUserToDeleteRows = False
         Me.dgvStocks.AllowUserToResizeColumns = False
         Me.dgvStocks.AllowUserToResizeRows = False
+        Me.dgvStocks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvStocks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvStocks.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.dgvStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvStocks.Location = New System.Drawing.Point(1169, 303)
+        Me.dgvStocks.Location = New System.Drawing.Point(1184, 303)
         Me.dgvStocks.MultiSelect = False
         Me.dgvStocks.Name = "dgvStocks"
         Me.dgvStocks.ReadOnly = True
@@ -311,7 +313,7 @@ Partial Class Inventory
         Me.dgvStocks.RowHeadersWidth = 62
         Me.dgvStocks.RowTemplate.Height = 28
         Me.dgvStocks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.dgvStocks.Size = New System.Drawing.Size(531, 345)
+        Me.dgvStocks.Size = New System.Drawing.Size(435, 345)
         Me.dgvStocks.TabIndex = 23
         '
         'btnViewStocks
@@ -321,9 +323,9 @@ Partial Class Inventory
         Me.btnViewStocks.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnViewStocks.Image = CType(resources.GetObject("btnViewStocks.Image"), System.Drawing.Image)
         Me.btnViewStocks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnViewStocks.Location = New System.Drawing.Point(1419, 678)
+        Me.btnViewStocks.Location = New System.Drawing.Point(1421, 677)
         Me.btnViewStocks.Name = "btnViewStocks"
-        Me.btnViewStocks.Size = New System.Drawing.Size(200, 48)
+        Me.btnViewStocks.Size = New System.Drawing.Size(215, 48)
         Me.btnViewStocks.TabIndex = 26
         Me.btnViewStocks.Text = "View Item"
         Me.btnViewStocks.UseVisualStyleBackColor = False
@@ -335,7 +337,7 @@ Partial Class Inventory
         Me.btnDeleteStocks.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnDeleteStocks.Image = CType(resources.GetObject("btnDeleteStocks.Image"), System.Drawing.Image)
         Me.btnDeleteStocks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDeleteStocks.Location = New System.Drawing.Point(1419, 748)
+        Me.btnDeleteStocks.Location = New System.Drawing.Point(1304, 748)
         Me.btnDeleteStocks.Name = "btnDeleteStocks"
         Me.btnDeleteStocks.Size = New System.Drawing.Size(200, 48)
         Me.btnDeleteStocks.TabIndex = 25
@@ -349,9 +351,9 @@ Partial Class Inventory
         Me.btnAddStocks.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnAddStocks.Image = CType(resources.GetObject("btnAddStocks.Image"), System.Drawing.Image)
         Me.btnAddStocks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddStocks.Location = New System.Drawing.Point(1169, 678)
+        Me.btnAddStocks.Location = New System.Drawing.Point(1169, 677)
         Me.btnAddStocks.Name = "btnAddStocks"
-        Me.btnAddStocks.Size = New System.Drawing.Size(200, 48)
+        Me.btnAddStocks.Size = New System.Drawing.Size(215, 48)
         Me.btnAddStocks.TabIndex = 24
         Me.btnAddStocks.Text = "Add Stocks"
         Me.btnAddStocks.UseVisualStyleBackColor = False
@@ -389,18 +391,6 @@ Partial Class Inventory
         Me.btnUpdateQuantity.Text = "Update"
         Me.btnUpdateQuantity.UseVisualStyleBackColor = False
         Me.btnUpdateQuantity.Visible = False
-        '
-        'btnHistory
-        '
-        Me.btnHistory.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHistory.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btnHistory.Location = New System.Drawing.Point(1169, 748)
-        Me.btnHistory.Name = "btnHistory"
-        Me.btnHistory.Size = New System.Drawing.Size(200, 48)
-        Me.btnHistory.TabIndex = 31
-        Me.btnHistory.Text = "History"
-        Me.btnHistory.UseVisualStyleBackColor = False
         '
         'Label7
         '
@@ -446,7 +436,6 @@ Partial Class Inventory
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.btnAccounts)
-        Me.Controls.Add(Me.btnHistory)
         Me.Controls.Add(Me.btnUpdateQuantity)
         Me.Controls.Add(Me.numeric1)
         Me.Controls.Add(Me.Label2)
@@ -491,7 +480,6 @@ Partial Class Inventory
     Friend WithEvents numeric1 As NumericUpDown
     Friend WithEvents btnUpdateQuantity As Button
     Friend WithEvents btnAccounts As Button
-    Friend WithEvents btnHistory As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Button4 As Button

@@ -35,7 +35,7 @@ Partial Class AddStocks
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblAmount = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -75,11 +75,11 @@ Partial Class AddStocks
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(26, 268)
+        Me.Label4.Location = New System.Drawing.Point(47, 305)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(155, 26)
+        Me.Label4.Size = New System.Drawing.Size(133, 26)
         Me.Label4.TabIndex = 17
-        Me.Label4.Text = "Price Purchased"
+        Me.Label4.Text = "Total Amount"
         '
         'Label3
         '
@@ -103,7 +103,7 @@ Partial Class AddStocks
         '
         'txtPriceStocks
         '
-        Me.txtPriceStocks.Location = New System.Drawing.Point(204, 268)
+        Me.txtPriceStocks.Location = New System.Drawing.Point(204, 262)
         Me.txtPriceStocks.Name = "txtPriceStocks"
         Me.txtPriceStocks.Size = New System.Drawing.Size(269, 26)
         Me.txtPriceStocks.TabIndex = 14
@@ -160,21 +160,21 @@ Partial Class AddStocks
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(40, 311)
+        Me.Label1.Location = New System.Drawing.Point(39, 261)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(141, 26)
         Me.Label1.TabIndex = 41
         Me.Label1.Text = "Price per item"
         '
-        'Label7
+        'lblAmount
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(264, 311)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(57, 26)
-        Me.Label7.TabIndex = 42
-        Me.Label7.Text = "Price"
+        Me.lblAmount.AutoSize = True
+        Me.lblAmount.Font = New System.Drawing.Font("Trebuchet MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAmount.Location = New System.Drawing.Point(322, 305)
+        Me.lblAmount.Name = "lblAmount"
+        Me.lblAmount.Size = New System.Drawing.Size(22, 26)
+        Me.lblAmount.TabIndex = 42
+        Me.lblAmount.Text = "0"
         '
         'AddStocks
         '
@@ -183,7 +183,7 @@ Partial Class AddStocks
         Me.BackColor = System.Drawing.Color.LightBlue
         Me.ClientSize = New System.Drawing.Size(496, 472)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.lblAmount)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button1)
@@ -219,5 +219,5 @@ Partial Class AddStocks
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label7 As Label
+    Friend WithEvents lblAmount As Label
 End Class

@@ -54,18 +54,19 @@ Partial Class CreateAccount
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.btnCreateAccount)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(512, 55)
+        Me.Panel1.Location = New System.Drawing.Point(510, 73)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(523, 511)
+        Me.Panel1.Size = New System.Drawing.Size(523, 490)
         Me.Panel1.TabIndex = 10
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Location = New System.Drawing.Point(27, 318)
+        Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(52, 319)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(137, 20)
+        Me.Label8.Size = New System.Drawing.Size(160, 23)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "Confirm Password"
         '
@@ -73,9 +74,9 @@ Partial Class CreateAccount
         '
         Me.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtConfirmPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtConfirmPassword.Location = New System.Drawing.Point(189, 311)
+        Me.txtConfirmPassword.Location = New System.Drawing.Point(221, 314)
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
-        Me.txtConfirmPassword.Size = New System.Drawing.Size(222, 32)
+        Me.txtConfirmPassword.Size = New System.Drawing.Size(248, 32)
         Me.txtConfirmPassword.TabIndex = 15
         Me.txtConfirmPassword.UseSystemPasswordChar = True
         '
@@ -83,9 +84,10 @@ Partial Class CreateAccount
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Location = New System.Drawing.Point(27, 250)
+        Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(52, 263)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(78, 20)
+        Me.Label7.Size = New System.Drawing.Size(88, 23)
         Me.Label7.TabIndex = 14
         Me.Label7.Text = "Password"
         '
@@ -93,9 +95,9 @@ Partial Class CreateAccount
         '
         Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(189, 243)
+        Me.txtPassword.Location = New System.Drawing.Point(221, 263)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(222, 32)
+        Me.txtPassword.Size = New System.Drawing.Size(248, 32)
         Me.txtPassword.TabIndex = 13
         Me.txtPassword.UseSystemPasswordChar = True
         '
@@ -103,9 +105,10 @@ Partial Class CreateAccount
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Location = New System.Drawing.Point(27, 179)
+        Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(52, 206)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(83, 20)
+        Me.Label6.Size = New System.Drawing.Size(94, 23)
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Username"
         '
@@ -113,18 +116,19 @@ Partial Class CreateAccount
         '
         Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsername.Location = New System.Drawing.Point(191, 172)
+        Me.txtUsername.Location = New System.Drawing.Point(221, 206)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(220, 32)
+        Me.txtUsername.Size = New System.Drawing.Size(246, 32)
         Me.txtUsername.TabIndex = 11
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Location = New System.Drawing.Point(27, 119)
+        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(52, 157)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(48, 20)
+        Me.Label5.Size = New System.Drawing.Size(55, 23)
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Email"
         '
@@ -132,9 +136,9 @@ Partial Class CreateAccount
         '
         Me.txtEMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtEMail.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEMail.Location = New System.Drawing.Point(189, 112)
+        Me.txtEMail.Location = New System.Drawing.Point(219, 152)
         Me.txtEMail.Name = "txtEMail"
-        Me.txtEMail.Size = New System.Drawing.Size(222, 32)
+        Me.txtEMail.Size = New System.Drawing.Size(250, 32)
         Me.txtEMail.TabIndex = 7
         '
         'Button2
@@ -142,10 +146,10 @@ Partial Class CreateAccount
         Me.Button2.BackColor = System.Drawing.Color.Silver
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(152, 446)
+        Me.Button2.Font = New System.Drawing.Font("Calibri", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(56, 408)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(225, 33)
+        Me.Button2.Size = New System.Drawing.Size(189, 38)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "CANCEL"
         Me.Button2.UseVisualStyleBackColor = False
@@ -155,10 +159,10 @@ Partial Class CreateAccount
         Me.btnCreateAccount.BackColor = System.Drawing.Color.Silver
         Me.btnCreateAccount.FlatAppearance.BorderSize = 0
         Me.btnCreateAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCreateAccount.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCreateAccount.Location = New System.Drawing.Point(152, 394)
+        Me.btnCreateAccount.Font = New System.Drawing.Font("Calibri", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCreateAccount.Location = New System.Drawing.Point(280, 408)
         Me.btnCreateAccount.Name = "btnCreateAccount"
-        Me.btnCreateAccount.Size = New System.Drawing.Size(225, 36)
+        Me.btnCreateAccount.Size = New System.Drawing.Size(189, 38)
         Me.btnCreateAccount.TabIndex = 1
         Me.btnCreateAccount.Text = "CREATE"
         Me.btnCreateAccount.UseVisualStyleBackColor = False
@@ -167,7 +171,7 @@ Partial Class CreateAccount
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(46, 38)
+        Me.Label1.Location = New System.Drawing.Point(75, 53)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(392, 46)
         Me.Label1.TabIndex = 0

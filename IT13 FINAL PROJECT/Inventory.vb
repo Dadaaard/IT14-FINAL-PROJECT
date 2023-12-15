@@ -152,10 +152,6 @@ Public Class Inventory
         AccountDetails.Show()
 
     End Sub
-    Private Sub btnHistory_Click(sender As Object, e As EventArgs) Handles btnHistory.Click
-        StocksHistory.Show()
-
-    End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Logout_Account()
     End Sub
